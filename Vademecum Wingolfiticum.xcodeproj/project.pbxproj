@@ -8,22 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */; };
-		2579F1801D5DEF9800EA2299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F17F1D5DEF9800EA2299 /* ViewController.swift */; };
-		2579F1831D5DEF9800EA2299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1811D5DEF9800EA2299 /* Main.storyboard */; };
+		2579F1831D5DEF9800EA2299 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1811D5DEF9800EA2299 /* Application.storyboard */; };
 		2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */; };
 		2579F1881D5DEF9800EA2299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1871D5DEF9800EA2299 /* Assets.xcassets */; };
 		2579F18B1D5DEF9800EA2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */; };
+		2579F1A31D5DF4B500EA2299 /* Turbolinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; };
+		2579F1A41D5DF4B500EA2299 /* Turbolinks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */; };
+		2579F1AE1D5E734900EA2299 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AA1D5E734900EA2299 /* ApplicationController.swift */; };
+		2579F1AF1D5E734900EA2299 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AB1D5E734900EA2299 /* Error.swift */; };
+		2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AC1D5E734900EA2299 /* ErrorView.swift */; };
+		2579F1B11D5E734900EA2299 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1AD1D5E734900EA2299 /* ErrorView.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2579F1A51D5DF4B500EA2299 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2579F1A41D5DF4B500EA2299 /* Turbolinks.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2579F17A1D5DEF9800EA2299 /* Vademecum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vademecum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2579F17A1D5DEF9800EA2299 /* Vademecum Wingolfiticum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vademecum Wingolfiticum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2579F17F1D5DEF9800EA2299 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2579F1821D5DEF9800EA2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2579F1821D5DEF9800EA2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Application.storyboard; sourceTree = "<group>"; };
 		2579F1851D5DEF9800EA2299 /* Vademecum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vademecum.xcdatamodel; sourceTree = "<group>"; };
 		2579F1871D5DEF9800EA2299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2579F18A1D5DEF9800EA2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2579F18C1D5DEF9800EA2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Turbolinks.framework; path = Carthage/Build/iOS/Turbolinks.framework; sourceTree = "<group>"; };
+		2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitableViewController.swift; sourceTree = "<group>"; };
+		2579F1AA1D5E734900EA2299 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		2579F1AB1D5E734900EA2299 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		2579F1AC1D5E734900EA2299 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		2579F1AD1D5E734900EA2299 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2579F1A31D5DF4B500EA2299 /* Turbolinks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +66,7 @@
 		2579F1711D5DEF9700EA2299 = {
 			isa = PBXGroup;
 			children = (
+				2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */,
 				2579F17C1D5DEF9800EA2299 /* Vademecum */,
 				2579F17B1D5DEF9800EA2299 /* Products */,
 			);
@@ -48,7 +75,7 @@
 		2579F17B1D5DEF9800EA2299 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2579F17A1D5DEF9800EA2299 /* Vademecum.app */,
+				2579F17A1D5DEF9800EA2299 /* Vademecum Wingolfiticum.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,9 +83,13 @@
 		2579F17C1D5DEF9800EA2299 /* Vademecum */ = {
 			isa = PBXGroup;
 			children = (
+				2579F1AA1D5E734900EA2299 /* ApplicationController.swift */,
+				2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */,
+				2579F1AB1D5E734900EA2299 /* Error.swift */,
+				2579F1AC1D5E734900EA2299 /* ErrorView.swift */,
+				2579F1AD1D5E734900EA2299 /* ErrorView.xib */,
 				2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */,
-				2579F17F1D5DEF9800EA2299 /* ViewController.swift */,
-				2579F1811D5DEF9800EA2299 /* Main.storyboard */,
+				2579F1811D5DEF9800EA2299 /* Application.storyboard */,
 				2579F1871D5DEF9800EA2299 /* Assets.xcassets */,
 				2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */,
 				2579F18C1D5DEF9800EA2299 /* Info.plist */,
@@ -70,21 +101,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2579F1791D5DEF9800EA2299 /* Vademecum */ = {
+		2579F1791D5DEF9800EA2299 /* Vademecum Wingolfiticum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2579F18F1D5DEF9800EA2299 /* Build configuration list for PBXNativeTarget "Vademecum" */;
+			buildConfigurationList = 2579F18F1D5DEF9800EA2299 /* Build configuration list for PBXNativeTarget "Vademecum Wingolfiticum" */;
 			buildPhases = (
 				2579F1761D5DEF9800EA2299 /* Sources */,
 				2579F1771D5DEF9800EA2299 /* Frameworks */,
 				2579F1781D5DEF9800EA2299 /* Resources */,
+				2579F1A51D5DF4B500EA2299 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Vademecum;
+			name = "Vademecum Wingolfiticum";
 			productName = Vademecum;
-			productReference = 2579F17A1D5DEF9800EA2299 /* Vademecum.app */;
+			productReference = 2579F17A1D5DEF9800EA2299 /* Vademecum Wingolfiticum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,10 +131,11 @@
 				TargetAttributes = {
 					2579F1791D5DEF9800EA2299 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = N2PZG7C8MS;
 					};
 				};
 			};
-			buildConfigurationList = 2579F1751D5DEF9700EA2299 /* Build configuration list for PBXProject "Vademecum" */;
+			buildConfigurationList = 2579F1751D5DEF9700EA2299 /* Build configuration list for PBXProject "Vademecum Wingolfiticum" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -115,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2579F1791D5DEF9800EA2299 /* Vademecum */,
+				2579F1791D5DEF9800EA2299 /* Vademecum Wingolfiticum */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +160,8 @@
 			files = (
 				2579F18B1D5DEF9800EA2299 /* LaunchScreen.storyboard in Resources */,
 				2579F1881D5DEF9800EA2299 /* Assets.xcassets in Resources */,
-				2579F1831D5DEF9800EA2299 /* Main.storyboard in Resources */,
+				2579F1831D5DEF9800EA2299 /* Application.storyboard in Resources */,
+				2579F1B11D5E734900EA2299 /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,21 +172,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2579F1AE1D5E734900EA2299 /* ApplicationController.swift in Sources */,
 				2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */,
-				2579F1801D5DEF9800EA2299 /* ViewController.swift in Sources */,
 				2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */,
+				2579F1AF1D5E734900EA2299 /* Error.swift in Sources */,
+				2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */,
+				2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2579F1811D5DEF9800EA2299 /* Main.storyboard */ = {
+		2579F1811D5DEF9800EA2299 /* Application.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2579F1821D5DEF9800EA2299 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Application.storyboard;
 			sourceTree = "<group>";
 		};
 		2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */ = {
@@ -255,10 +292,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Vademecum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wingolf.Vademecum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.fiedlschuster.Vademecum;
+				PRODUCT_NAME = "Vademecum Wingolfiticum";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -266,17 +310,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Vademecum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wingolf.Vademecum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.fiedlschuster.Vademecum;
+				PRODUCT_NAME = "Vademecum Wingolfiticum";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2579F1751D5DEF9700EA2299 /* Build configuration list for PBXProject "Vademecum" */ = {
+		2579F1751D5DEF9700EA2299 /* Build configuration list for PBXProject "Vademecum Wingolfiticum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2579F18D1D5DEF9800EA2299 /* Debug */,
@@ -285,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2579F18F1D5DEF9800EA2299 /* Build configuration list for PBXNativeTarget "Vademecum" */ = {
+		2579F18F1D5DEF9800EA2299 /* Build configuration list for PBXNativeTarget "Vademecum Wingolfiticum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2579F1901D5DEF9800EA2299 /* Debug */,
