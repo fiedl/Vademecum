@@ -2,6 +2,10 @@
 
 Das Vademecum des [Wingolfs](https://wingolf.org) als iOS-App.
 
+<img src="screenshots/welcome.png" alt="welcome" style="width: 250px;"/>
+<img src="screenshots/sign_in.png" alt="sign_in" style="width: 250px;"/>
+<img src="screenshots/dashboard.png" alt="dashboard" style="width: 250px;"/>
+
 ## Installation
 
 Die Applikation befindet sich noch in der Entwicklung und ist **noch nicht** in den **App-Store** hochgeladen.
