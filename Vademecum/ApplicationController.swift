@@ -1,6 +1,8 @@
 import UIKit
 import WebKit
 import Turbolinks
+import Contacts
+import ContactsUI
 
 class ApplicationController: UINavigationController {
     //private let URL = NSURL(string: "http://localhost:3000/mobile/welcome")!
@@ -14,7 +16,7 @@ class ApplicationController: UINavigationController {
 
     private lazy var webViewConfiguration: WKWebViewConfiguration = {
         let configuration = WKWebViewConfiguration()
-        configuration.userContentController.addScriptMessageHandler(self, name: "vademecum")
+        configuration.userContentController.addScriptMessageHandler(self, name: "display_vcf_data")
         configuration.processPool = self.webViewProcessPool
         configuration.applicationNameForUserAgent = "vademecum"
         return configuration
@@ -59,6 +61,31 @@ class ApplicationController: UINavigationController {
         session.visit(visitable)
     }
 
+    private func presentContactController(data: NSData) {
+        do {
+            //let data = NSData(contentsOfFile: "/Users/fiedl/Desktop/sven.vcf")
+
+            let con : CNContact = try CNContactVCardSerialization.contactsWithData(data).first as! CNContact
+
+            let unkvc = CNContactViewController(forUnknownContact: con)
+            //        unkvc.message = "He knows his trees"
+            //        unkvc.contactStore = CNContactStore()
+            //        unkvc.delegate = self
+            //        unkvc.allowsActions = false
+            pushViewController(unkvc, animated: true)
+
+        } catch {
+            print("error")
+        }
+
+//        let con = CNMutableContact()
+//        con.givenName = "Johnny"
+//        con.familyName = "Appleseed"
+//        con.phoneNumbers.append(CNLabeledValue(label: "woods", value: CNPhoneNumber(stringValue: "555-123-4567")))
+
+
+    }
+
 //    private func presentNumbersViewController() {
 //        let viewController = NumbersViewController()
 //        pushViewController(viewController, animated: true)
@@ -78,8 +105,13 @@ class ApplicationController: UINavigationController {
 
 extension ApplicationController: SessionDelegate {
     func session(session: Session, didProposeVisitToURL URL: NSURL, withAction action: Action) {
-//        if pathsToResetNavigatiion.contains(URL.path!) {
-//            presentVisitableForSession(session, URL: URL, action: action)
+//        print(URL)
+//
+//        print(URL.pathExtension)
+//        if URL.absoluteString.containsString("mobile_app_embedded_vcf") {
+//            presentContactController(session, URL: URL)
+//        } else if URL.pathExtension == "vcf" {
+//            presentContactController(session, URL: URL)
 //        } else {
             presentVisitableForSession(session, URL: URL, action: action)
 //        }
@@ -125,9 +157,15 @@ extension ApplicationController: SessionDelegate {
 extension ApplicationController: WKScriptMessageHandler {
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
         if let message = message.body as? String {
-            let alertController = UIAlertController(title: "Turbolinks", message: message, preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(alertController, animated: true, completion: nil)
+//            let alertController = UIAlertController(title: "Turbolinks", message: message, preferredStyle: .Alert)
+//            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+//            presentViewController(alertController, animated: true, completion: nil)
+
+            let csv_data = message.dataUsingEncoding(NSUTF8StringEncoding)
+            presentContactController(csv_data!)
+
+
+
         }
     }
 }
