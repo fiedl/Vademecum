@@ -19,6 +19,7 @@
 		2579F1AF1D5E734900EA2299 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AB1D5E734900EA2299 /* Error.swift */; };
 		2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AC1D5E734900EA2299 /* ErrorView.swift */; };
 		2579F1B11D5E734900EA2299 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1AD1D5E734900EA2299 /* ErrorView.xib */; };
+		259EC50C1D64AA2C00FDF70E /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		2579F1AB1D5E734900EA2299 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		2579F1AC1D5E734900EA2299 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		2579F1AD1D5E734900EA2299 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */,
 				2579F18C1D5DEF9800EA2299 /* Info.plist */,
 				2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */,
+				259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */,
 			);
 			path = Vademecum;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2579F1AE1D5E734900EA2299 /* ApplicationController.swift in Sources */,
+				259EC50C1D64AA2C00FDF70E /* ContactViewController.swift in Sources */,
 				2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */,
 				2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */,
 				2579F1AF1D5E734900EA2299 /* Error.swift in Sources */,
@@ -343,6 +347,7 @@
 				2579F1911D5DEF9800EA2299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

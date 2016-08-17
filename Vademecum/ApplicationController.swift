@@ -62,28 +62,8 @@ class ApplicationController: UINavigationController {
     }
 
     private func presentContactController(data: NSData) {
-        do {
-            //let data = NSData(contentsOfFile: "/Users/fiedl/Desktop/sven.vcf")
-
-            let con : CNContact = try CNContactVCardSerialization.contactsWithData(data).first as! CNContact
-
-            let unkvc = CNContactViewController(forUnknownContact: con)
-            //        unkvc.message = "He knows his trees"
-            //        unkvc.contactStore = CNContactStore()
-            //        unkvc.delegate = self
-            //        unkvc.allowsActions = false
-            pushViewController(unkvc, animated: true)
-
-        } catch {
-            print("error")
-        }
-
-//        let con = CNMutableContact()
-//        con.givenName = "Johnny"
-//        con.familyName = "Appleseed"
-//        con.phoneNumbers.append(CNLabeledValue(label: "woods", value: CNPhoneNumber(stringValue: "555-123-4567")))
-
-
+        let contactViewController = CNContactViewController(vcfData: data)
+        pushViewController(contactViewController, animated: true)
     }
 
 //    private func presentNumbersViewController() {
@@ -164,6 +144,8 @@ extension ApplicationController: WKScriptMessageHandler {
             let csv_data = message.dataUsingEncoding(NSUTF8StringEncoding)
             presentContactController(csv_data!)
 
+//            let u = NSURL(string: "http://localhost:3000/attachments/1530/Star_Trek_-_The_Next_Generation_Bible.pdf")
+//            presentVisitableForSession(session, URL: u!, action: .Advance)
 
 
         }
