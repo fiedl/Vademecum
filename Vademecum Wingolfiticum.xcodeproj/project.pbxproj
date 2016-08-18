@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2550CDE01D6592B900A8F7F6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */; };
+		2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */; };
+		2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE41D659C4900A8F7F6 /* Session.swift */; };
+		2550CDE81D6606EB00A8F7F6 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE71D6606EB00A8F7F6 /* PdfViewController.swift */; };
+		2550CDEA1D660B3000A8F7F6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE91D660B3000A8F7F6 /* UIView.swift */; };
+		2550CDEC1D661A7400A8F7F6 /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDEB1D661A7400A8F7F6 /* FileViewController.swift */; };
 		2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */; };
 		2579F1831D5DEF9800EA2299 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1811D5DEF9800EA2299 /* Application.storyboard */; };
 		2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */; };
@@ -15,7 +21,6 @@
 		2579F1A31D5DF4B500EA2299 /* Turbolinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; };
 		2579F1A41D5DF4B500EA2299 /* Turbolinks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */; };
-		2579F1AE1D5E734900EA2299 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AA1D5E734900EA2299 /* ApplicationController.swift */; };
 		2579F1AF1D5E734900EA2299 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AB1D5E734900EA2299 /* Error.swift */; };
 		2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AC1D5E734900EA2299 /* ErrorView.swift */; };
 		2579F1B11D5E734900EA2299 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1AD1D5E734900EA2299 /* ErrorView.xib */; };
@@ -37,6 +42,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Controllers/NavigationController.swift; sourceTree = "<group>"; };
+		2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = Controllers/ApplicationController.swift; sourceTree = "<group>"; };
+		2550CDE41D659C4900A8F7F6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Models/Session.swift; sourceTree = "<group>"; };
+		2550CDE71D6606EB00A8F7F6 /* PdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PdfViewController.swift; path = Controllers/PdfViewController.swift; sourceTree = "<group>"; };
+		2550CDE91D660B3000A8F7F6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Views/UIView.swift; sourceTree = "<group>"; };
+		2550CDEB1D661A7400A8F7F6 /* FileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileViewController.swift; path = Controllers/FileViewController.swift; sourceTree = "<group>"; };
 		2579F17A1D5DEF9800EA2299 /* Vademecum Wingolfiticum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vademecum Wingolfiticum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2579F1821D5DEF9800EA2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Application.storyboard; sourceTree = "<group>"; };
@@ -45,12 +56,11 @@
 		2579F18A1D5DEF9800EA2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2579F18C1D5DEF9800EA2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Turbolinks.framework; path = Carthage/Build/iOS/Turbolinks.framework; sourceTree = "<group>"; };
-		2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitableViewController.swift; sourceTree = "<group>"; };
-		2579F1AA1D5E734900EA2299 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
-		2579F1AB1D5E734900EA2299 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		2579F1AC1D5E734900EA2299 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		2579F1AD1D5E734900EA2299 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
-		259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitableViewController.swift; path = Controllers/VisitableViewController.swift; sourceTree = "<group>"; };
+		2579F1AB1D5E734900EA2299 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Models/Error.swift; sourceTree = "<group>"; };
+		2579F1AC1D5E734900EA2299 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorView.swift; path = Views/ErrorView.swift; sourceTree = "<group>"; };
+		2579F1AD1D5E734900EA2299 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ErrorView.xib; path = Views/ErrorView.xib; sourceTree = "<group>"; };
+		259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = Controllers/ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2550CDDE1D65921000A8F7F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */,
+				2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */,
+				259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */,
+				2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */,
+				2550CDE71D6606EB00A8F7F6 /* PdfViewController.swift */,
+				2550CDEB1D661A7400A8F7F6 /* FileViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2550CDE31D659C2000A8F7F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2550CDE41D659C4900A8F7F6 /* Session.swift */,
+				2579F1AB1D5E734900EA2299 /* Error.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2550CDE61D65AFCE00A8F7F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2550CDE91D660B3000A8F7F6 /* UIView.swift */,
+				2579F1AC1D5E734900EA2299 /* ErrorView.swift */,
+				2579F1AD1D5E734900EA2299 /* ErrorView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2579F1711D5DEF9700EA2299 = {
 			isa = PBXGroup;
 			children = (
@@ -85,18 +127,15 @@
 		2579F17C1D5DEF9800EA2299 /* Vademecum */ = {
 			isa = PBXGroup;
 			children = (
-				2579F1AA1D5E734900EA2299 /* ApplicationController.swift */,
-				2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */,
-				2579F1AB1D5E734900EA2299 /* Error.swift */,
-				2579F1AC1D5E734900EA2299 /* ErrorView.swift */,
-				2579F1AD1D5E734900EA2299 /* ErrorView.xib */,
+				2550CDDE1D65921000A8F7F6 /* Controllers */,
+				2550CDE31D659C2000A8F7F6 /* Models */,
+				2550CDE61D65AFCE00A8F7F6 /* Views */,
 				2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */,
 				2579F1811D5DEF9800EA2299 /* Application.storyboard */,
 				2579F1871D5DEF9800EA2299 /* Assets.xcassets */,
 				2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */,
 				2579F18C1D5DEF9800EA2299 /* Info.plist */,
 				2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */,
-				259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */,
 			);
 			path = Vademecum;
 			sourceTree = "<group>";
@@ -175,13 +214,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2579F1AE1D5E734900EA2299 /* ApplicationController.swift in Sources */,
+				2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */,
+				2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */,
+				2550CDE01D6592B900A8F7F6 /* NavigationController.swift in Sources */,
+				2550CDEA1D660B3000A8F7F6 /* UIView.swift in Sources */,
 				259EC50C1D64AA2C00FDF70E /* ContactViewController.swift in Sources */,
+				2550CDEC1D661A7400A8F7F6 /* FileViewController.swift in Sources */,
 				2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */,
 				2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */,
 				2579F1AF1D5E734900EA2299 /* Error.swift in Sources */,
 				2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */,
 				2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */,
+				2550CDE81D6606EB00A8F7F6 /* PdfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

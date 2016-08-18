@@ -6,6 +6,8 @@ Das Vademecum des [Wingolfs](https://wingolf.org) als iOS-App.
 <img src="screenshots/sign_in.png" alt="sign_in" width=250>
 <img src="screenshots/dashboard.png" alt="dashboard" width=250>
 
+<img src="screenshots/documents.gif" alt="dashboard" width=250>
+
 ## Installation
 
 Die Applikation befindet sich noch in der Entwicklung und ist **noch nicht** in den **App-Store** hochgeladen.
@@ -47,6 +49,11 @@ carthage update
 # Projekt in Xcode öffnen
 open "Vademecum Wingolfiticum.xcodeproj"
 ```
+
+### Konventionen
+
+* Struktur: https://github.com/futurice/ios-good-practices
+* Code-Style: https://github.com/raywenderlich/swift-style-guide
 
 ## Autor
 
