@@ -100,6 +100,8 @@
 		2550CDE61D65AFCE00A8F7F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2579F1811D5DEF9800EA2299 /* Application.storyboard */,
+				2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */,
 				2550CDE91D660B3000A8F7F6 /* UIView.swift */,
 				2579F1AC1D5E734900EA2299 /* ErrorView.swift */,
 				2579F1AD1D5E734900EA2299 /* ErrorView.xib */,
@@ -131,9 +133,7 @@
 				2550CDE31D659C2000A8F7F6 /* Models */,
 				2550CDE61D65AFCE00A8F7F6 /* Views */,
 				2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */,
-				2579F1811D5DEF9800EA2299 /* Application.storyboard */,
 				2579F1871D5DEF9800EA2299 /* Assets.xcassets */,
-				2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */,
 				2579F18C1D5DEF9800EA2299 /* Info.plist */,
 				2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */,
 			);
