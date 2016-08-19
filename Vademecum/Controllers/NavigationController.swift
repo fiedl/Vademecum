@@ -71,8 +71,7 @@ extension NavigationController {
   }
 
   func presentPdfViewController(url: NSURL) {
-    let pdfViewController = PdfViewController(URL: url)
-    pdfViewController.applicationController = self.applicationController
+    let pdfViewController = PdfViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     pushViewController(pdfViewController, animated: true)
   }
 }
