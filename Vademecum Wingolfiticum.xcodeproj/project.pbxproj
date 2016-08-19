@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25046EAC1D66650B00F0AAB1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25046EAB1D66650B00F0AAB1 /* Device.swift */; };
 		2550CDE01D6592B900A8F7F6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */; };
 		2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */; };
 		2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE41D659C4900A8F7F6 /* Session.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25046EAB1D66650B00F0AAB1 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Controllers/NavigationController.swift; sourceTree = "<group>"; };
 		2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = Controllers/ApplicationController.swift; sourceTree = "<group>"; };
 		2550CDE41D659C4900A8F7F6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Models/Session.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				2550CDE41D659C4900A8F7F6 /* Session.swift */,
 				2579F1AB1D5E734900EA2299 /* Error.swift */,
+				25046EAB1D66650B00F0AAB1 /* Device.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25046EAC1D66650B00F0AAB1 /* Device.swift in Sources */,
 				2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */,
 				2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */,
 				2550CDE01D6592B900A8F7F6 /* NavigationController.swift in Sources */,
