@@ -10,9 +10,6 @@ class VisitableViewController: Turbolinks.VisitableViewController {
     if let applicationController = applicationController {
       visitableView.backgroundColor = applicationController.webAppBackgroundColor
     }
-
-    visitableView.webView?.scrollView.maximumZoomScale = 1.0
-    visitableView.webView?.scrollView.minimumZoomScale = 1.0
   }
 
   lazy var errorView: ErrorView = {
