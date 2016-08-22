@@ -48,11 +48,13 @@ class ApplicationController {
   }
 
   func visitEntryPointUrl() {
-    if Device.isSimulator {
-      visitLocalServerIfRunningAndProductionServerOtherwiese()
-    } else {
-      visit(self.productionEntryPointUrl)
-    }
+    visit(self.developmentEntryPointUrl)
+
+//    if Device.isSimulator {
+//      visitLocalServerIfRunningAndProductionServerOtherwiese()
+//    } else {
+//      visit(self.productionEntryPointUrl)
+//    }
   }
 
   func visit(url: NSURL) {
@@ -61,8 +63,8 @@ class ApplicationController {
 
   func visitLocalServerIfRunningAndProductionServerOtherwiese() {
     let testSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-    testSessionConfiguration.timeoutIntervalForRequest = NSTimeInterval(5) // seconds
-    testSessionConfiguration.timeoutIntervalForResource = NSTimeInterval(5) // seconds
+    testSessionConfiguration.timeoutIntervalForRequest = NSTimeInterval(8) // seconds
+    testSessionConfiguration.timeoutIntervalForResource = NSTimeInterval(8) // seconds
     let testSession = NSURLSession(configuration: testSessionConfiguration)
     let task = testSession.dataTaskWithURL(self.developmentEntryPointUrl) { (data, response, error) -> Void in
       dispatch_async(dispatch_get_main_queue()) { // http://stackoverflow.com/a/28321213/2066546, http://stackoverflow.com/a/33715865/2066546

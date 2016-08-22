@@ -2,6 +2,8 @@ import UIKit
 import WebKit
 import Turbolinks
 import ContactsUI
+import EventKit
+import EventKitUI
 
 class NavigationController: UINavigationController {
   var applicationController: ApplicationController?
@@ -73,6 +75,11 @@ extension NavigationController {
   func presentPdfViewController(url: NSURL) {
     let pdfViewController = PdfViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     pushViewController(pdfViewController, animated: true)
+  }
+
+  func presentEventViewController(icsString: String) {
+    let eventViewController = EventViewController(icsString: icsString)
+    pushViewController(eventViewController, animated: true)
   }
 }
 
@@ -153,8 +160,47 @@ extension NavigationController: WKNavigationDelegate {
       presentPdfViewController(url)
     }
 
+    if url.pathExtension == "ics" {
+      let store = EKEventStore()
+      store.requestAccessToEntityType(.Event) { (granted: Bool, error: NSError?) in
+        let event = EKEvent(eventStore: store)
+        event.title = "Foo"
+
+        let controller = EKEventViewController()
+        controller.event = event
+        controller.allowsEditing = false
+        controller.delegate = self
+
+        self.presentViewController(controller, animated: true) { () in
+          print("complete")
+        }
+
+
+        // TODO: http://stackoverflow.com/questions/28379603/how-to-add-an-event-in-the-device-calendar-using-swift
+
+
+
+      }
+
+
+//      webView.readUrlContent(url) { (result: String) in
+//        self.presentEventViewController(result)
+//      }
+
+
+      //      let u = "calshow://localhost:3000/events/404.ics?token=yZj2F9RRxPkisTgwn4zvxthge6ooqSxW55x9HiDe"
+//      UIApplication.sharedApplication().openURL(NSURL(string: u)!)
+    }
+
     decisionHandler(WKNavigationActionPolicy.Cancel)
 
+  }
+
+}
+
+extension NavigationController: EKEventViewDelegate {
+  func eventViewController(controller: EKEventViewController, didCompleteWithAction action: EKEventViewAction) {
+    print("ok")
   }
 
 }
