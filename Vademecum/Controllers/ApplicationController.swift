@@ -4,6 +4,7 @@ import WebKit
 class ApplicationController {
   var window: UIWindow?
   var navigationController: NavigationController?
+  var splitViewController: SplitViewController?
 
   var application: UIApplication {
     return UIApplication.sharedApplication()
@@ -11,7 +12,8 @@ class ApplicationController {
 
   let productionEntryPointUrl = NSURL(string: "https://wingolfsplattform.org/mobile/welcome")!
   let developmentEntryPointUrl = NSURL(string: "http://localhost:3000/mobile/welcome")!
-  let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
+  //let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
+  let webAppBackgroundColor = UIColor(red:0.200, green:0.478, blue:0.718, alpha:1.00)
 
   let webViewProcessPool = WKProcessPool()
 
@@ -43,7 +45,18 @@ class ApplicationController {
   func startApplication() {
     navigationController = NavigationController()
     navigationController!.applicationController = self
-    window!.rootViewController = navigationController
+
+    let emptyViewController = EmptyViewController()
+
+    self.splitViewController = SplitViewController()
+    self.splitViewController!.viewControllers = [navigationController!, emptyViewController]
+    self.splitViewController?.preferredDisplayMode = .AllVisible
+
+    //emptyViewController.navigationController?.popToRootViewControllerAnimated(false)
+
+    window?.rootViewController = splitViewController
+
+//    window!.rootViewController = navigationController
     visitEntryPointUrl()
   }
 

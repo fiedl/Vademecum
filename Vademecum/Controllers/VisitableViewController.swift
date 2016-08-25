@@ -12,6 +12,16 @@ class VisitableViewController: Turbolinks.VisitableViewController {
     }
   }
 
+  override func willMoveToParentViewController(parent: UIViewController?) {
+    // This is the "back" button: http://stackoverflow.com/a/32667598/2066546
+    super.willMoveToParentViewController(parent)
+
+    applicationController?.navigationController?.preferSplitScreen()
+    if splitViewController?.viewControllers.last! is PdfViewController {
+      splitViewController?.viewControllers = [(splitViewController?.viewControllers.first)!, EmptyViewController()]
+    }
+  }
+
   lazy var errorView: ErrorView = {
     let view = NSBundle.mainBundle().loadNibNamed("ErrorView", owner: self, options: nil).first as! ErrorView
     view.translatesAutoresizingMaskIntoConstraints = false

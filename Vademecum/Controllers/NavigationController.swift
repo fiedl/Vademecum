@@ -7,8 +7,6 @@ import EventKitUI
 
 class NavigationController: UINavigationController {
   var applicationController: ApplicationController?
-  var currentUrl: NSURL?
-  var didReload: Bool = false
 
   func visit(url: NSURL, action: String = "advance") {
     print("visiting url \(url)")
@@ -25,9 +23,11 @@ class NavigationController: UINavigationController {
       action = "root"
     }
 
-    currentUrl = url
-    didReload = false
-    presentVisitableViewController(url, action: action)
+//    if url.path == "/mobile/contacts" {
+//      presentContactsViewController(url)
+//    } else {
+      presentVisitableViewController(url, action: action)
+//    }
   }
 
   func currentWebView() -> WKWebView {
@@ -63,24 +63,35 @@ extension NavigationController {
       fatalError("Action \(action) not handled.")
     }
 
+    preferSplitScreen()
     applicationController!.turbolinksSession.visit(visitableViewController)
   }
 
   func presentContactViewController(vcardString vcardString: String) {
     let vcardData = vcardString.dataUsingEncoding(NSUTF8StringEncoding)
     let contactViewController = CNContactViewController(vcardData: vcardData!)
-    pushViewController(contactViewController, animated: true)
+    preferSplitScreen()
+    showDetailViewController(contactViewController, sender: self)
   }
 
   func presentPdfViewController(url: NSURL) {
     let pdfViewController = PdfViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
-    pushViewController(pdfViewController, animated: true)
+    self.applicationController?.splitViewController?.showDetailViewController(pdfViewController, sender: self)
   }
 
   func presentEventViewController(icsString: String) {
     let eventViewController = EventViewController(icsString: icsString)
     pushViewController(eventViewController, animated: true)
   }
+
+  func preferFullscreen() {
+    (splitViewController as! SplitViewController).preferFullscreenContent()
+  }
+
+  func preferSplitScreen() {
+    (splitViewController as! SplitViewController).preferSplitScreenContent()
+  }
+
 }
 
 // MARK: Handle incoming navigation messages from javascript
@@ -200,7 +211,6 @@ extension NavigationController: WKNavigationDelegate {
 
 extension NavigationController: EKEventViewDelegate {
   func eventViewController(controller: EKEventViewController, didCompleteWithAction action: EKEventViewAction) {
-    print("ok")
   }
 
 }

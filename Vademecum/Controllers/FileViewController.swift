@@ -27,6 +27,16 @@ class FileViewController: UIViewController {
     fileView.bindFrameToSuperviewBounds()  // http://stackoverflow.com/a/32824659/2066546
     self.title = filename  // http://stackoverflow.com/a/39022302/2066546
     fileView.loadRequest(NSURLRequest(URL: self.url!))
+    fileView.navigationDelegate = self
+  }
+
+}
+
+extension FileViewController: WKNavigationDelegate {
+
+  func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+    let split = self.splitViewController as! SplitViewController
+    split.preferFullscreenContent()
   }
 
 }
