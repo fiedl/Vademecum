@@ -12,6 +12,8 @@ class ApplicationController {
 
   let productionEntryPointUrl = NSURL(string: "https://wingolfsplattform.org/mobile/welcome")!
   let developmentEntryPointUrl = NSURL(string: "http://localhost:3000/mobile/welcome")!
+  var entryPointUrl: NSURL?
+
   //let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
   let webAppBackgroundColor = UIColor(red:0.200, green:0.478, blue:0.718, alpha:1.00)
 
@@ -47,12 +49,13 @@ class ApplicationController {
     navigationController!.applicationController = self
 
     let emptyViewController = EmptyViewController()
+    emptyViewController.applicationController = self
 
     self.splitViewController = SplitViewController()
     self.splitViewController!.viewControllers = [navigationController!, emptyViewController]
     self.splitViewController?.preferredDisplayMode = .AllVisible
 
-    //emptyViewController.navigationController?.popToRootViewControllerAnimated(false)
+    emptyViewController.navigationController?.popToRootViewControllerAnimated(false)
 
     window?.rootViewController = splitViewController
 
@@ -61,6 +64,7 @@ class ApplicationController {
   }
 
   func visitEntryPointUrl() {
+    self.entryPointUrl = self.developmentEntryPointUrl
     visit(self.developmentEntryPointUrl)
 
 //    if Device.isSimulator {

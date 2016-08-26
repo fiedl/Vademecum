@@ -23,8 +23,8 @@ class NavigationController: UINavigationController {
       action = "root"
     }
 
-//    if url.path == "/mobile/contacts" {
-//      presentContactsViewController(url)
+//    if url.path!.containsString("/events/") {
+//      presentEventViewController(url)
 //    } else {
       presentVisitableViewController(url, action: action)
 //    }
@@ -79,9 +79,15 @@ extension NavigationController {
     self.applicationController?.splitViewController?.showDetailViewController(pdfViewController, sender: self)
   }
 
-  func presentEventViewController(icsString: String) {
-    let eventViewController = EventViewController(icsString: icsString)
-    pushViewController(eventViewController, animated: true)
+//  func presentEventViewController(icsString: String) {
+//    let eventViewController = EventViewController(icsString: icsString)
+//    pushViewController(eventViewController, animated: true)
+//  }
+
+  func presentEventViewController(url: NSURL) {
+    let eventViewController = WebViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
+    preferSplitScreen()
+    showDetailViewController(eventViewController, sender: self)
   }
 
   func preferFullscreen() {
@@ -140,6 +146,7 @@ extension NavigationController: SessionDelegate {
 
   func sessionDidLoadWebView(session: Session) {
     session.webView.navigationDelegate = self
+    session.webView.UIDelegate = self
   }
 
 }
@@ -171,40 +178,55 @@ extension NavigationController: WKNavigationDelegate {
       presentPdfViewController(url)
     }
 
-    if url.pathExtension == "ics" {
-      let store = EKEventStore()
-      store.requestAccessToEntityType(.Event) { (granted: Bool, error: NSError?) in
-        let event = EKEvent(eventStore: store)
-        event.title = "Foo"
-
-        let controller = EKEventViewController()
-        controller.event = event
-        controller.allowsEditing = false
-        controller.delegate = self
-
-        self.presentViewController(controller, animated: true) { () in
-          print("complete")
-        }
-
-
-        // TODO: http://stackoverflow.com/questions/28379603/how-to-add-an-event-in-the-device-calendar-using-swift
-
-
-
+    if url.pathExtension == "vcf" {
+      webView.readUrlContent(url) { (result: String) in
+        self.presentContactViewController(vcardString: result)
       }
+    }
 
-
-//      webView.readUrlContent(url) { (result: String) in
-//        self.presentEventViewController(result)
+//    if url.pathExtension == "ics" {
+//      let store = EKEventStore()
+//      store.requestAccessToEntityType(.Event) { (granted: Bool, error: NSError?) in
+//        let event = EKEvent(eventStore: store)
+//        event.title = "Foo"
+//
+//        let controller = EKEventViewController()
+//        controller.event = event
+//        controller.allowsEditing = false
+//        controller.delegate = self
+//
+//        self.presentViewController(controller, animated: true) { () in
+//          print("complete")
+//        }
+//
+//
+//        // TODO: http://stackoverflow.com/questions/28379603/how-to-add-an-event-in-the-device-calendar-using-swift
 //      }
+//    }
 
+    // External Links
+    if url.host != applicationController!.entryPointUrl!.host {
+      UIApplication.sharedApplication().openURL(url)
+    }
 
-      //      let u = "calshow://localhost:3000/events/404.ics?token=yZj2F9RRxPkisTgwn4zvxthge6ooqSxW55x9HiDe"
-//      UIApplication.sharedApplication().openURL(NSURL(string: u)!)
+    // Emails
+    if url.scheme.lowercaseString == "mailto" {
+      UIApplication.sharedApplication().openURL(url)
     }
 
     decisionHandler(WKNavigationActionPolicy.Cancel)
 
+  }
+
+}
+
+extension NavigationController: WKUIDelegate {
+
+  func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+    if navigationAction.targetFrame == nil {
+      webView.loadRequest(navigationAction.request)
+    }
+    return nil
   }
 
 }

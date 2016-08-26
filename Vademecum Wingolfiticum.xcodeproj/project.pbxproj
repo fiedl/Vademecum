@@ -11,6 +11,7 @@
 		25505A161D6B7E8D009DC1BF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A151D6B7E8D009DC1BF /* SplitViewController.swift */; };
 		25505A181D6BB656009DC1BF /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A171D6BB656009DC1BF /* EmptyViewController.swift */; };
 		25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A191D6BC746009DC1BF /* UIImage.swift */; };
+		25505A1C1D6F9472009DC1BF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A1B1D6F9472009DC1BF /* WebViewController.swift */; };
 		2550CDE01D6592B900A8F7F6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */; };
 		2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */; };
 		2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE41D659C4900A8F7F6 /* Session.swift */; };
@@ -52,6 +53,7 @@
 		25505A151D6B7E8D009DC1BF /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitViewController.swift; path = Controllers/SplitViewController.swift; sourceTree = "<group>"; };
 		25505A171D6BB656009DC1BF /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Controllers/EmptyViewController.swift; sourceTree = "<group>"; };
 		25505A191D6BC746009DC1BF /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Models/UIImage.swift; sourceTree = "<group>"; };
+		25505A1B1D6F9472009DC1BF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controllers/WebViewController.swift; sourceTree = "<group>"; };
 		2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Controllers/NavigationController.swift; sourceTree = "<group>"; };
 		2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = Controllers/ApplicationController.swift; sourceTree = "<group>"; };
 		2550CDE41D659C4900A8F7F6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Models/Session.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				259173F31D67A7D800594500 /* EventViewController.swift */,
 				25505A151D6B7E8D009DC1BF /* SplitViewController.swift */,
 				25505A171D6BB656009DC1BF /* EmptyViewController.swift */,
+				25505A1B1D6F9472009DC1BF /* WebViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25505A1C1D6F9472009DC1BF /* WebViewController.swift in Sources */,
 				25046EAC1D66650B00F0AAB1 /* Device.swift in Sources */,
 				2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */,
 				2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */,
