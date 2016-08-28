@@ -10,9 +10,10 @@ class ApplicationController {
     return UIApplication.sharedApplication()
   }
 
-  let productionEntryPointUrl = NSURL(string: "https://wingolfsplattform.org/mobile/welcome")!
-  let developmentEntryPointUrl = NSURL(string: "http://localhost:3000/mobile/welcome")!
+  var appConfig: Config?
   var entryPointUrl: NSURL?
+  var signInUrl: NSURL?
+  var dashboardUrl: NSURL?
 
   //let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
   let webAppBackgroundColor = UIColor(red:0.200, green:0.478, blue:0.718, alpha:1.00)
@@ -23,7 +24,7 @@ class ApplicationController {
     let configuration = WKWebViewConfiguration()
     configuration.processPool = self.webViewProcessPool
     configuration.applicationNameForUserAgent = "vademecum"
-    configuration.userContentController.addScriptMessageHandler(self.navigationController!, name: "display_vcf_data")
+//    configuration.userContentController.addScriptMessageHandler(self.navigationController!, name: "display_vcf_data")
     return configuration
   }()
 
@@ -45,6 +46,11 @@ class ApplicationController {
   }
 
   func startApplication() {
+    appConfig = Config()
+    self.entryPointUrl = appConfig!.entryPointUrl
+    self.signInUrl = NSURL(string: self.entryPointUrl!.absoluteString.stringByReplacingOccurrencesOfString("/mobile/welcome", withString: "/sign_in"))
+    self.dashboardUrl = NSURL(string: self.entryPointUrl!.absoluteString.stringByReplacingOccurrencesOfString("/mobile/welcome", withString: "/mobile/dashboard"))
+
     navigationController = NavigationController()
     navigationController!.applicationController = self
 
@@ -59,42 +65,15 @@ class ApplicationController {
 
     window?.rootViewController = splitViewController
 
-//    window!.rootViewController = navigationController
     visitEntryPointUrl()
   }
 
   func visitEntryPointUrl() {
-    self.entryPointUrl = self.developmentEntryPointUrl
-    visit(self.developmentEntryPointUrl)
-
-//    if Device.isSimulator {
-//      visitLocalServerIfRunningAndProductionServerOtherwiese()
-//    } else {
-//      visit(self.productionEntryPointUrl)
-//    }
+    visit(self.entryPointUrl!)
   }
 
   func visit(url: NSURL) {
     navigationController!.visit(url)
-  }
-
-  func visitLocalServerIfRunningAndProductionServerOtherwiese() {
-    let testSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-    testSessionConfiguration.timeoutIntervalForRequest = NSTimeInterval(8) // seconds
-    testSessionConfiguration.timeoutIntervalForResource = NSTimeInterval(8) // seconds
-    let testSession = NSURLSession(configuration: testSessionConfiguration)
-    let task = testSession.dataTaskWithURL(self.developmentEntryPointUrl) { (data, response, error) -> Void in
-      dispatch_async(dispatch_get_main_queue()) { // http://stackoverflow.com/a/28321213/2066546, http://stackoverflow.com/a/33715865/2066546
-        if data != nil {
-          print("local server running. connecting to \(self.developmentEntryPointUrl)")
-          self.visit(self.developmentEntryPointUrl)
-        } else {
-          print("server not running. connecting to \(self.productionEntryPointUrl)")
-          self.visit(self.productionEntryPointUrl)
-        }
-      }
-    }
-    task.resume()
   }
 
 }

@@ -12,6 +12,35 @@
 		25505A181D6BB656009DC1BF /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A171D6BB656009DC1BF /* EmptyViewController.swift */; };
 		25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A191D6BC746009DC1BF /* UIImage.swift */; };
 		25505A1C1D6F9472009DC1BF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A1B1D6F9472009DC1BF /* WebViewController.swift */; };
+		25505A1F1D706B0C009DC1BF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A1B1D6F9472009DC1BF /* WebViewController.swift */; };
+		25505A201D706B0C009DC1BF /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25046EAB1D66650B00F0AAB1 /* Device.swift */; };
+		25505A211D706B0C009DC1BF /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE41D659C4900A8F7F6 /* Session.swift */; };
+		25505A221D706B0C009DC1BF /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */; };
+		25505A231D706B0C009DC1BF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */; };
+		25505A241D706B0C009DC1BF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE91D660B3000A8F7F6 /* UIView.swift */; };
+		25505A251D706B0C009DC1BF /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259EC50B1D64AA2C00FDF70E /* ContactViewController.swift */; };
+		25505A261D706B0C009DC1BF /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDEB1D661A7400A8F7F6 /* FileViewController.swift */; };
+		25505A271D706B0C009DC1BF /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259173F51D685F8700594500 /* WKWebView.swift */; };
+		25505A281D706B0C009DC1BF /* Vademecum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */; };
+		25505A291D706B0C009DC1BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */; };
+		25505A2A1D706B0C009DC1BF /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A171D6BB656009DC1BF /* EmptyViewController.swift */; };
+		25505A2B1D706B0C009DC1BF /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259173F31D67A7D800594500 /* EventViewController.swift */; };
+		25505A2C1D706B0C009DC1BF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AB1D5E734900EA2299 /* Error.swift */; };
+		25505A2D1D706B0C009DC1BF /* VisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */; };
+		25505A2E1D706B0C009DC1BF /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AC1D5E734900EA2299 /* ErrorView.swift */; };
+		25505A2F1D706B0C009DC1BF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A191D6BC746009DC1BF /* UIImage.swift */; };
+		25505A301D706B0C009DC1BF /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE71D6606EB00A8F7F6 /* PdfViewController.swift */; };
+		25505A311D706B0C009DC1BF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A151D6B7E8D009DC1BF /* SplitViewController.swift */; };
+		25505A331D706B0C009DC1BF /* Turbolinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; };
+		25505A351D706B0C009DC1BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */; };
+		25505A361D706B0C009DC1BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1871D5DEF9800EA2299 /* Assets.xcassets */; };
+		25505A371D706B0C009DC1BF /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1811D5DEF9800EA2299 /* Application.storyboard */; };
+		25505A381D706B0C009DC1BF /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1AD1D5E734900EA2299 /* ErrorView.xib */; };
+		25505A3A1D706B0C009DC1BF /* Turbolinks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		25505A411D707707009DC1BF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A401D707707009DC1BF /* Config.swift */; };
+		25505A421D707C8D009DC1BF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A401D707707009DC1BF /* Config.swift */; };
+		25505A461D70C618009DC1BF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A451D70C618009DC1BF /* AuthenticationViewController.swift */; };
+		25505A471D7338C2009DC1BF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A451D70C618009DC1BF /* AuthenticationViewController.swift */; };
 		2550CDE01D6592B900A8F7F6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */; };
 		2550CDE21D65930E00A8F7F6 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */; };
 		2550CDE51D659C4900A8F7F6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE41D659C4900A8F7F6 /* Session.swift */; };
@@ -35,6 +64,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		25505A391D706B0C009DC1BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				25505A3A1D706B0C009DC1BF /* Turbolinks.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2579F1A51D5DF4B500EA2299 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -54,6 +94,10 @@
 		25505A171D6BB656009DC1BF /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Controllers/EmptyViewController.swift; sourceTree = "<group>"; };
 		25505A191D6BC746009DC1BF /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Models/UIImage.swift; sourceTree = "<group>"; };
 		25505A1B1D6F9472009DC1BF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controllers/WebViewController.swift; sourceTree = "<group>"; };
+		25505A3E1D706B0C009DC1BF /* Vademecum Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vademecum Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25505A3F1D706B0C009DC1BF /* Dev.Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Dev.Info.plist; path = "/Users/fiedl/code/Vademecum.turbolinks-ios/Vademecum/Dev.Info.plist"; sourceTree = "<absolute>"; };
+		25505A401D707707009DC1BF /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Models/Config.swift; sourceTree = "<group>"; };
+		25505A451D70C618009DC1BF /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = Controllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
 		2550CDDF1D6592B900A8F7F6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Controllers/NavigationController.swift; sourceTree = "<group>"; };
 		2550CDE11D65930E00A8F7F6 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = Controllers/ApplicationController.swift; sourceTree = "<group>"; };
 		2550CDE41D659C4900A8F7F6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Models/Session.swift; sourceTree = "<group>"; };
@@ -78,6 +122,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		25505A321D706B0C009DC1BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25505A331D706B0C009DC1BF /* Turbolinks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2579F1771D5DEF9800EA2299 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +154,7 @@
 				25505A151D6B7E8D009DC1BF /* SplitViewController.swift */,
 				25505A171D6BB656009DC1BF /* EmptyViewController.swift */,
 				25505A1B1D6F9472009DC1BF /* WebViewController.swift */,
+				25505A451D70C618009DC1BF /* AuthenticationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +166,7 @@
 				2579F1AB1D5E734900EA2299 /* Error.swift */,
 				25046EAB1D66650B00F0AAB1 /* Device.swift */,
 				25505A191D6BC746009DC1BF /* UIImage.swift */,
+				25505A401D707707009DC1BF /* Config.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -143,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				2579F17A1D5DEF9800EA2299 /* Vademecum Wingolfiticum.app */,
+				25505A3E1D706B0C009DC1BF /* Vademecum Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +211,7 @@
 				2579F17D1D5DEF9800EA2299 /* AppDelegate.swift */,
 				2579F1871D5DEF9800EA2299 /* Assets.xcassets */,
 				2579F18C1D5DEF9800EA2299 /* Info.plist */,
+				25505A3F1D706B0C009DC1BF /* Dev.Info.plist */,
 				2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */,
 			);
 			path = Vademecum;
@@ -164,6 +220,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		25505A1D1D706B0C009DC1BF /* Vademecum Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25505A3B1D706B0C009DC1BF /* Build configuration list for PBXNativeTarget "Vademecum Dev" */;
+			buildPhases = (
+				25505A1E1D706B0C009DC1BF /* Sources */,
+				25505A321D706B0C009DC1BF /* Frameworks */,
+				25505A341D706B0C009DC1BF /* Resources */,
+				25505A391D706B0C009DC1BF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Vademecum Dev";
+			productName = Vademecum;
+			productReference = 25505A3E1D706B0C009DC1BF /* Vademecum Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2579F1791D5DEF9800EA2299 /* Vademecum Wingolfiticum */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2579F18F1D5DEF9800EA2299 /* Build configuration list for PBXNativeTarget "Vademecum Wingolfiticum" */;
@@ -212,11 +286,23 @@
 			projectRoot = "";
 			targets = (
 				2579F1791D5DEF9800EA2299 /* Vademecum Wingolfiticum */,
+				25505A1D1D706B0C009DC1BF /* Vademecum Dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		25505A341D706B0C009DC1BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25505A351D706B0C009DC1BF /* LaunchScreen.storyboard in Resources */,
+				25505A361D706B0C009DC1BF /* Assets.xcassets in Resources */,
+				25505A371D706B0C009DC1BF /* Application.storyboard in Resources */,
+				25505A381D706B0C009DC1BF /* ErrorView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2579F1781D5DEF9800EA2299 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +317,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		25505A1E1D706B0C009DC1BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25505A1F1D706B0C009DC1BF /* WebViewController.swift in Sources */,
+				25505A201D706B0C009DC1BF /* Device.swift in Sources */,
+				25505A211D706B0C009DC1BF /* Session.swift in Sources */,
+				25505A221D706B0C009DC1BF /* ApplicationController.swift in Sources */,
+				25505A231D706B0C009DC1BF /* NavigationController.swift in Sources */,
+				25505A241D706B0C009DC1BF /* UIView.swift in Sources */,
+				25505A251D706B0C009DC1BF /* ContactViewController.swift in Sources */,
+				25505A261D706B0C009DC1BF /* FileViewController.swift in Sources */,
+				25505A271D706B0C009DC1BF /* WKWebView.swift in Sources */,
+				25505A281D706B0C009DC1BF /* Vademecum.xcdatamodeld in Sources */,
+				25505A471D7338C2009DC1BF /* AuthenticationViewController.swift in Sources */,
+				25505A291D706B0C009DC1BF /* AppDelegate.swift in Sources */,
+				25505A2A1D706B0C009DC1BF /* EmptyViewController.swift in Sources */,
+				25505A2B1D706B0C009DC1BF /* EventViewController.swift in Sources */,
+				25505A2C1D706B0C009DC1BF /* Error.swift in Sources */,
+				25505A2D1D706B0C009DC1BF /* VisitableViewController.swift in Sources */,
+				25505A2E1D706B0C009DC1BF /* ErrorView.swift in Sources */,
+				25505A2F1D706B0C009DC1BF /* UIImage.swift in Sources */,
+				25505A421D707C8D009DC1BF /* Config.swift in Sources */,
+				25505A301D706B0C009DC1BF /* PdfViewController.swift in Sources */,
+				25505A311D706B0C009DC1BF /* SplitViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2579F1761D5DEF9800EA2299 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +359,7 @@
 				2550CDEC1D661A7400A8F7F6 /* FileViewController.swift in Sources */,
 				259173F61D685F8700594500 /* WKWebView.swift in Sources */,
 				2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */,
+				25505A461D70C618009DC1BF /* AuthenticationViewController.swift in Sources */,
 				2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */,
 				25505A181D6BB656009DC1BF /* EmptyViewController.swift in Sources */,
 				259173F41D67A7D800594500 /* EventViewController.swift in Sources */,
@@ -252,6 +367,7 @@
 				2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */,
 				2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */,
 				25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */,
+				25505A411D707707009DC1BF /* Config.swift in Sources */,
 				2550CDE81D6606EB00A8F7F6 /* PdfViewController.swift in Sources */,
 				25505A161D6B7E8D009DC1BF /* SplitViewController.swift in Sources */,
 			);
@@ -279,6 +395,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		25505A3C1D706B0C009DC1BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Dev.Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.fiedlschuster.Vademecum.Dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		25505A3D1D706B0C009DC1BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Dev.Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.fiedlschuster.Vademecum.Dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
 		2579F18D1D5DEF9800EA2299 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -403,6 +555,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		25505A3B1D706B0C009DC1BF /* Build configuration list for PBXNativeTarget "Vademecum Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25505A3C1D706B0C009DC1BF /* Debug */,
+				25505A3D1D706B0C009DC1BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2579F1751D5DEF9700EA2299 /* Build configuration list for PBXProject "Vademecum Wingolfiticum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

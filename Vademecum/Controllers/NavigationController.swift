@@ -7,6 +7,7 @@ import EventKitUI
 
 class NavigationController: UINavigationController {
   var applicationController: ApplicationController?
+  var currentVisitableViewController: VisitableViewController?
 
   func visit(url: NSURL, action: String = "advance") {
     print("visiting url \(url)")
@@ -23,11 +24,7 @@ class NavigationController: UINavigationController {
       action = "root"
     }
 
-//    if url.path!.containsString("/events/") {
-//      presentEventViewController(url)
-//    } else {
-      presentVisitableViewController(url, action: action)
-//    }
+    presentVisitableViewController(url, action: action)
   }
 
   func currentWebView() -> WKWebView {
@@ -52,6 +49,8 @@ extension NavigationController {
 
     let visitableViewController = VisitableViewController(URL: url)
     visitableViewController.applicationController = self.applicationController
+
+    currentVisitableViewController = visitableViewController
 
     if action == "advance" {
       pushViewController(visitableViewController, animated: true)
@@ -90,6 +89,14 @@ extension NavigationController {
     showDetailViewController(eventViewController, sender: self)
   }
 
+  func presentAuthenticationViewController(url: NSURL) {
+    let authenticationViewController = AuthenticationViewController()
+    authenticationViewController.delegate = self
+    authenticationViewController.webViewProcessPool = applicationController!.webViewProcessPool
+    authenticationViewController.URL = applicationController?.signInUrl
+    pushViewController(authenticationViewController, animated: true)
+  }
+
   func preferFullscreen() {
     (splitViewController as! SplitViewController).preferFullscreenContent()
   }
@@ -113,19 +120,26 @@ extension NavigationController: WKScriptMessageHandler {
 extension NavigationController: SessionDelegate {
   func session(session: Session, didProposeVisitToURL URL: NSURL, withAction action: Action) {
     print("proposed url: \(URL)")
-    visit(URL, action: action.rawValue)
+
+    if URL.path!.containsString("/sign_in") {
+      presentAuthenticationViewController(applicationController!.dashboardUrl!)
+    } else {
+      visit(URL, action: action.rawValue)
+    }
   }
 
   func session(session: Session, didFailRequestForVisitable visitable: Visitable, withError error: NSError) {
     NSLog("ERROR: %@", error)
     guard let visitableViewController = visitable as? VisitableViewController, errorCode = ErrorCode(rawValue: error.code) else { return }
-    
+
+
+
     switch errorCode {
       case .HTTPFailure:
         let statusCode = error.userInfo["statusCode"] as! Int
         switch statusCode {
           case 401:
-            fatalError("Authentication errors should be handled by the server. The user is presented a sign-in form by the server.")
+            presentAuthenticationViewController(visitable.visitableURL)
           case 404:
              visitableViewController.presentError(.HTTPNotFoundError)
           default:
@@ -215,7 +229,6 @@ extension NavigationController: WKNavigationDelegate {
     }
 
     decisionHandler(WKNavigationActionPolicy.Cancel)
-
   }
 
 }
@@ -234,5 +247,11 @@ extension NavigationController: WKUIDelegate {
 extension NavigationController: EKEventViewDelegate {
   func eventViewController(controller: EKEventViewController, didCompleteWithAction action: EKEventViewAction) {
   }
+}
 
+extension NavigationController: AuthenticationViewControllerDelegate {
+  func authenticationViewControllerDidAuthenticate(authenticationViewController: AuthenticationViewController) {
+    popViewControllerAnimated(true)
+    visit(applicationController!.dashboardUrl!)
+  }
 }
