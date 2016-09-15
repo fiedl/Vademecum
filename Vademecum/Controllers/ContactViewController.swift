@@ -5,9 +5,9 @@ extension CNContactViewController {
 
   // MARK: Initialization
 
-  convenience init(vcardData: NSData) {
+  convenience init(vcardData: Data) {
     do {
-      let contact : CNContact = try CNContactVCardSerialization.contactsWithData(vcardData).first as! CNContact
+      let contact : CNContact = try CNContactVCardSerialization.contacts(with: vcardData).first!
 
       self.init(forUnknownContact: contact)
 

@@ -9,18 +9,18 @@ class SplitViewController: UISplitViewController {
   }
 
   func preferFullscreenContent() {
-    self.preferredDisplayMode = .Automatic
+    self.preferredDisplayMode = .automatic
   }
 
   func preferSplitScreenContent() {
-    self.preferredDisplayMode = .AllVisible
+    self.preferredDisplayMode = .allVisible
   }
 
 }
 
 extension SplitViewController : UISplitViewControllerDelegate {
 
-  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+  func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
     if secondaryViewController is EmptyViewController {
       return true
     } else {

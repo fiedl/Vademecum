@@ -1,11 +1,11 @@
 import Foundation
 
 class Config {
-  var entryPointUrl: NSURL!
+  var entryPointUrl: URL!
 
   init() {
-    let bundle = NSBundle.mainBundle()
-    entryPointUrl = NSURL(string: bundle.objectForInfoDictionaryKey("EntryPointUrl")! as! String)
+    let bundle = Bundle.main
+    entryPointUrl = URL(string: bundle.object(forInfoDictionaryKey: "EntryPointUrl")! as! String)
   }
 
 //    let infoPlistName = "Dev.Info"

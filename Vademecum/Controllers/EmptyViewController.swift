@@ -6,7 +6,7 @@ class EmptyViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.view.backgroundColor = UIColor.whiteColor()
+    self.view.backgroundColor = UIColor.white
     addWappenImage()
   }
 
@@ -19,8 +19,8 @@ class EmptyViewController: UIViewController {
 
     imageView.translatesAutoresizingMaskIntoConstraints = false
     self.view.addConstraints([
-      NSLayoutConstraint(item: imageView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 1),
-      NSLayoutConstraint(item: imageView, attribute: .CenterY, relatedBy: .Equal, toItem: self.view, attribute: .CenterY, multiplier: 1, constant: 1)
+      NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 1),
+      NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 1)
     ])
   }
 

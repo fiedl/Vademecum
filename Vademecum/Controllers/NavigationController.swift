@@ -9,7 +9,7 @@ class NavigationController: UINavigationController {
   var applicationController: ApplicationController?
   var currentVisitableViewController: VisitableViewController?
 
-  func visit(url: NSURL, action: String = "advance") {
+  func visit(_ url: URL, action: String = "advance") {
     print("visiting url \(url)")
 
     var action = action
@@ -20,7 +20,7 @@ class NavigationController: UINavigationController {
       "/mobile/dashboard"
     ]
 
-    if pathsToResetNavigation.contains(url.path!) {
+    if pathsToResetNavigation.contains(url.path) {
       action = "root"
     }
 
@@ -35,19 +35,19 @@ class NavigationController: UINavigationController {
 // MARK: Present view controllers
 
 extension NavigationController {
-  func showViewControllerAsRoot(viewController: UIViewController) {
-    popToRootViewControllerAnimated(true)
+  func showViewControllerAsRoot(_ viewController: UIViewController) {
+    popToRootViewController(animated: true)
     setViewControllers([viewController], animated: false)
   }
 
-  func replaceCurrentViewControllerWith(viewController: UIViewController) {
-    popViewControllerAnimated(false)
+  func replaceCurrentViewControllerWith(_ viewController: UIViewController) {
+    popViewController(animated: false)
     pushViewController(viewController, animated: false)
   }
 
-  func presentVisitableViewController(url: NSURL, action: String) {
+  func presentVisitableViewController(_ url: URL, action: String) {
 
-    let visitableViewController = VisitableViewController(URL: url)
+    let visitableViewController = VisitableViewController(url: url)
     visitableViewController.applicationController = self.applicationController
 
     currentVisitableViewController = visitableViewController
@@ -66,14 +66,14 @@ extension NavigationController {
     applicationController!.turbolinksSession.visit(visitableViewController)
   }
 
-  func presentContactViewController(vcardString vcardString: String) {
-    let vcardData = vcardString.dataUsingEncoding(NSUTF8StringEncoding)
+  func presentContactViewController(vcardString: String) {
+    let vcardData = vcardString.data(using: String.Encoding.utf8)
     let contactViewController = CNContactViewController(vcardData: vcardData!)
     preferSplitScreen()
     showDetailViewController(contactViewController, sender: self)
   }
 
-  func presentPdfViewController(url: NSURL) {
+  func presentPdfViewController(_ url: URL) {
     let pdfViewController = PdfViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     self.applicationController?.splitViewController?.showDetailViewController(pdfViewController, sender: self)
   }
@@ -83,13 +83,13 @@ extension NavigationController {
 //    pushViewController(eventViewController, animated: true)
 //  }
 
-  func presentEventViewController(url: NSURL) {
+  func presentEventViewController(_ url: URL) {
     let eventViewController = WebViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     preferSplitScreen()
     showDetailViewController(eventViewController, sender: self)
   }
 
-  func presentAuthenticationViewController(url: NSURL) {
+  func presentAuthenticationViewController(_ url: URL) {
     let authenticationViewController = AuthenticationViewController()
     authenticationViewController.delegate = self
     authenticationViewController.webViewProcessPool = applicationController!.webViewProcessPool
@@ -110,7 +110,7 @@ extension NavigationController {
 // MARK: Handle incoming navigation messages from javascript
 
 extension NavigationController: WKScriptMessageHandler {
-  func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
+  func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     if let message = message.body as? String {
       presentContactViewController(vcardString: message)
     }
@@ -118,24 +118,24 @@ extension NavigationController: WKScriptMessageHandler {
 }
 
 extension NavigationController: SessionDelegate {
-  func session(session: Session, didProposeVisitToURL URL: NSURL, withAction action: Action) {
+  func session(_ session: Session, didProposeVisitToURL URL: Foundation.URL, withAction action: Action) {
     print("proposed url: \(URL)")
 
-    if URL.path!.containsString("/sign_in") {
-      presentAuthenticationViewController(applicationController!.dashboardUrl!)
+    if URL.path.contains("/sign_in") {
+      presentAuthenticationViewController(applicationController!.dashboardUrl! as URL)
     } else {
       visit(URL, action: action.rawValue)
     }
   }
 
-  func session(session: Session, didFailRequestForVisitable visitable: Visitable, withError error: NSError) {
+  func session(_ session: Session, didFailRequestForVisitable visitable: Visitable, withError error: NSError) {
     NSLog("ERROR: %@", error)
-    guard let visitableViewController = visitable as? VisitableViewController, errorCode = ErrorCode(rawValue: error.code) else { return }
+    guard let visitableViewController = visitable as? VisitableViewController, let errorCode = ErrorCode(rawValue: error.code) else { return }
 
 
 
     switch errorCode {
-      case .HTTPFailure:
+      case .httpFailure:
         let statusCode = error.userInfo["statusCode"] as! Int
         switch statusCode {
           case 401:
@@ -145,22 +145,22 @@ extension NavigationController: SessionDelegate {
           default:
              visitableViewController.presentError(Error(HTTPStatusCode: statusCode))
         }
-      case .NetworkFailure:
+      case .networkFailure:
         visitableViewController.presentError(.NetworkError)
     }
   }
 
-  func sessionDidStartRequest(session: Session) {
-    applicationController!.application.networkActivityIndicatorVisible = true
+  func sessionDidStartRequest(_ session: Session) {
+    applicationController!.application.isNetworkActivityIndicatorVisible = true
   }
 
-  func sessionDidFinishRequest(session: Session) {
-    applicationController!.application.networkActivityIndicatorVisible = false
+  func sessionDidFinishRequest(_ session: Session) {
+    applicationController!.application.isNetworkActivityIndicatorVisible = false
   }
 
-  func sessionDidLoadWebView(session: Session) {
+  func sessionDidLoadWebView(_ session: Session) {
     session.webView.navigationDelegate = self
-    session.webView.UIDelegate = self
+    session.webView.uiDelegate = self
   }
 
 }
@@ -169,7 +169,7 @@ extension NavigationController: SessionDelegate {
 
 extension NavigationController: WKNavigationDelegate {
 
-  func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> ()) {
+  func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> ()) {
 
     // This method is called whenever the webView within the
     // visitableView attempts a navigation action. By default, the
@@ -186,7 +186,7 @@ extension NavigationController: WKNavigationDelegate {
     // no back button to the documents index. Therefore, we have
     // to create a new view controller manually.
 
-    let url = navigationAction.request.URL!
+    let url = navigationAction.request.url!
 
     if url.pathExtension == "pdf" {
       presentPdfViewController(url)
@@ -220,24 +220,24 @@ extension NavigationController: WKNavigationDelegate {
 
     // External Links
     if url.host != applicationController!.entryPointUrl!.host {
-      UIApplication.sharedApplication().openURL(url)
+      UIApplication.shared.openURL(url)
     }
 
     // Emails
-    if url.scheme.lowercaseString == "mailto" {
-      UIApplication.sharedApplication().openURL(url)
+    if url.scheme?.lowercased() == "mailto" {
+      UIApplication.shared.openURL(url)
     }
 
-    decisionHandler(WKNavigationActionPolicy.Cancel)
+    decisionHandler(WKNavigationActionPolicy.cancel)
   }
 
 }
 
 extension NavigationController: WKUIDelegate {
 
-  func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+  func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
     if navigationAction.targetFrame == nil {
-      webView.loadRequest(navigationAction.request)
+      webView.load(navigationAction.request)
     }
     return nil
   }
@@ -245,13 +245,13 @@ extension NavigationController: WKUIDelegate {
 }
 
 extension NavigationController: EKEventViewDelegate {
-  func eventViewController(controller: EKEventViewController, didCompleteWithAction action: EKEventViewAction) {
+  func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
   }
 }
 
 extension NavigationController: AuthenticationViewControllerDelegate {
-  func authenticationViewControllerDidAuthenticate(authenticationViewController: AuthenticationViewController) {
-    popViewControllerAnimated(true)
-    visit(applicationController!.dashboardUrl!)
+  func authenticationViewControllerDidAuthenticate(_ authenticationViewController: AuthenticationViewController) {
+    popViewController(animated: true)
+    visit(applicationController!.dashboardUrl! as URL)
   }
 }

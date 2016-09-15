@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		25046EAC1D66650B00F0AAB1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25046EAB1D66650B00F0AAB1 /* Device.swift */; };
+		251C3BE01D8AACE40068BFE6 /* Turbolinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251C3BDF1D8AACE40068BFE6 /* Turbolinks.framework */; };
+		251C3BE11D8AACE40068BFE6 /* Turbolinks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 251C3BDF1D8AACE40068BFE6 /* Turbolinks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		25505A161D6B7E8D009DC1BF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A151D6B7E8D009DC1BF /* SplitViewController.swift */; };
 		25505A181D6BB656009DC1BF /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A171D6BB656009DC1BF /* EmptyViewController.swift */; };
 		25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A191D6BC746009DC1BF /* UIImage.swift */; };
@@ -31,12 +33,10 @@
 		25505A2F1D706B0C009DC1BF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A191D6BC746009DC1BF /* UIImage.swift */; };
 		25505A301D706B0C009DC1BF /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550CDE71D6606EB00A8F7F6 /* PdfViewController.swift */; };
 		25505A311D706B0C009DC1BF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A151D6B7E8D009DC1BF /* SplitViewController.swift */; };
-		25505A331D706B0C009DC1BF /* Turbolinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; };
 		25505A351D706B0C009DC1BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */; };
 		25505A361D706B0C009DC1BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1871D5DEF9800EA2299 /* Assets.xcassets */; };
 		25505A371D706B0C009DC1BF /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1811D5DEF9800EA2299 /* Application.storyboard */; };
 		25505A381D706B0C009DC1BF /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1AD1D5E734900EA2299 /* ErrorView.xib */; };
-		25505A3A1D706B0C009DC1BF /* Turbolinks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		25505A411D707707009DC1BF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A401D707707009DC1BF /* Config.swift */; };
 		25505A421D707C8D009DC1BF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A401D707707009DC1BF /* Config.swift */; };
 		25505A461D70C618009DC1BF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A451D70C618009DC1BF /* AuthenticationViewController.swift */; };
@@ -52,8 +52,6 @@
 		2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1841D5DEF9800EA2299 /* Vademecum.xcdatamodeld */; };
 		2579F1881D5DEF9800EA2299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1871D5DEF9800EA2299 /* Assets.xcassets */; };
 		2579F18B1D5DEF9800EA2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2579F1891D5DEF9800EA2299 /* LaunchScreen.storyboard */; };
-		2579F1A31D5DF4B500EA2299 /* Turbolinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; };
-		2579F1A41D5DF4B500EA2299 /* Turbolinks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */; };
 		2579F1AF1D5E734900EA2299 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AB1D5E734900EA2299 /* Error.swift */; };
 		2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579F1AC1D5E734900EA2299 /* ErrorView.swift */; };
@@ -64,13 +62,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		25505A391D706B0C009DC1BF /* Embed Frameworks */ = {
+		251C3BE21D8AACE50068BFE6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				25505A3A1D706B0C009DC1BF /* Turbolinks.framework in Embed Frameworks */,
+				251C3BE11D8AACE40068BFE6 /* Turbolinks.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +79,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2579F1A41D5DF4B500EA2299 /* Turbolinks.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		25046EAB1D66650B00F0AAB1 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		251C3BDF1D8AACE40068BFE6 /* Turbolinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Turbolinks.framework; path = Carthage/Build/iOS/Turbolinks.framework; sourceTree = "<group>"; };
 		25505A151D6B7E8D009DC1BF /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitViewController.swift; path = Controllers/SplitViewController.swift; sourceTree = "<group>"; };
 		25505A171D6BB656009DC1BF /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Controllers/EmptyViewController.swift; sourceTree = "<group>"; };
 		25505A191D6BC746009DC1BF /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Models/UIImage.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 		2579F1871D5DEF9800EA2299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2579F18A1D5DEF9800EA2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2579F18C1D5DEF9800EA2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Turbolinks.framework; path = Carthage/Build/iOS/Turbolinks.framework; sourceTree = "<group>"; };
 		2579F1A81D5E72C500EA2299 /* VisitableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitableViewController.swift; path = Controllers/VisitableViewController.swift; sourceTree = "<group>"; };
 		2579F1AB1D5E734900EA2299 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Models/Error.swift; sourceTree = "<group>"; };
 		2579F1AC1D5E734900EA2299 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorView.swift; path = Views/ErrorView.swift; sourceTree = "<group>"; };
@@ -126,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25505A331D706B0C009DC1BF /* Turbolinks.framework in Frameworks */,
+				251C3BE01D8AACE40068BFE6 /* Turbolinks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2579F1A31D5DF4B500EA2299 /* Turbolinks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +183,7 @@
 		2579F1711D5DEF9700EA2299 = {
 			isa = PBXGroup;
 			children = (
-				2579F1A21D5DF4B500EA2299 /* Turbolinks.framework */,
+				251C3BDF1D8AACE40068BFE6 /* Turbolinks.framework */,
 				2579F17C1D5DEF9800EA2299 /* Vademecum */,
 				2579F17B1D5DEF9800EA2299 /* Products */,
 			);
@@ -227,7 +223,7 @@
 				25505A1E1D706B0C009DC1BF /* Sources */,
 				25505A321D706B0C009DC1BF /* Frameworks */,
 				25505A341D706B0C009DC1BF /* Resources */,
-				25505A391D706B0C009DC1BF /* Embed Frameworks */,
+				251C3BE21D8AACE50068BFE6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +262,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Wingolf;
 				TargetAttributes = {
+					25505A1D1D706B0C009DC1BF = {
+						LastSwiftMigration = 0800;
+					};
 					2579F1791D5DEF9800EA2299 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = N2PZG7C8MS;
@@ -410,6 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.fiedlschuster.Vademecum.Dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -428,6 +428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.fiedlschuster.Vademecum.Dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

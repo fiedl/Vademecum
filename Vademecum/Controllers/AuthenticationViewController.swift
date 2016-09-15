@@ -2,20 +2,20 @@ import UIKit
 import WebKit
 
 protocol AuthenticationViewControllerDelegate: class {
-  func authenticationViewControllerDidAuthenticate(authenticationViewController: AuthenticationViewController)
+  func authenticationViewControllerDidAuthenticate(_ authenticationViewController: AuthenticationViewController)
 }
 
 enum AuthenticationState {
-  case None
-  case SignInPage
-  case Callback
-  case Dashboard
+  case none
+  case signInPage
+  case callback
+  case dashboard
 }
 
 class AuthenticationViewController: UIViewController {
 
-  var URL: NSURL?
-  var state: AuthenticationState = .None
+  var URL: Foundation.URL?
+  var state: AuthenticationState = .none
 
   var webViewProcessPool: WKProcessPool?
   weak var delegate: AuthenticationViewControllerDelegate?
@@ -24,7 +24,7 @@ class AuthenticationViewController: UIViewController {
     let configuration = WKWebViewConfiguration()
     configuration.processPool = self.webViewProcessPool!
 
-    let webView = WKWebView(frame: CGRectZero, configuration: configuration)
+    let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
     webView.translatesAutoresizingMaskIntoConstraints = false
     webView.navigationDelegate = self
     return webView
@@ -36,19 +36,19 @@ class AuthenticationViewController: UIViewController {
     self.title = "Anmelden"
 
     view.addSubview(webView)
-    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options: [], metrics: nil, views: [ "view": webView ]))
-    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options: [], metrics: nil, views: [ "view": webView ]))
+    view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: [ "view": webView ]))
+    view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: [ "view": webView ]))
 
     if let URL = self.URL {
-      webView.loadRequest(NSURLRequest(URL: URL))
+      webView.load(URLRequest(url: URL))
     }
   }
 }
 
 extension AuthenticationViewController: WKNavigationDelegate {
-  func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+  func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 
-    let url = navigationAction.request.URL!
+    let url = navigationAction.request.url!
 
     print(state)
     print(url)
@@ -56,20 +56,20 @@ extension AuthenticationViewController: WKNavigationDelegate {
     // TODO: Sign-In-Formular doch nicht mit Turbolinks. Sonst wird diese
     // Methode hier nicht getriggert.
 
-    if self.state == .None && url.absoluteString.containsString("/sign_in") {
-      self.state = .SignInPage
+    if self.state == .none && url.absoluteString.contains("/sign_in") {
+      self.state = .signInPage
 //    } else if self.state == .SignInPage && url.absoluteString.containsString("/callback") {
 //      self.state = .Callback
-    } else if self.state == .SignInPage && url.absoluteString.containsString("/dashboard") {
-      self.state = .Dashboard
+    } else if self.state == .signInPage && url.absoluteString.contains("/dashboard") {
+      self.state = .dashboard
     }
 
-    if self.state == .Dashboard {
-      decisionHandler(.Cancel)
+    if self.state == .dashboard {
+      decisionHandler(.cancel)
       delegate?.authenticationViewControllerDidAuthenticate(self)
       return
     }
 
-    decisionHandler(.Allow)
+    decisionHandler(.allow)
   }
 }

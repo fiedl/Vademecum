@@ -7,13 +7,13 @@ class ApplicationController {
   var splitViewController: SplitViewController?
 
   var application: UIApplication {
-    return UIApplication.sharedApplication()
+    return UIApplication.shared
   }
 
   var appConfig: Config?
-  var entryPointUrl: NSURL?
-  var signInUrl: NSURL?
-  var dashboardUrl: NSURL?
+  var entryPointUrl: URL?
+  var signInUrl: URL?
+  var dashboardUrl: URL?
 
   //let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
   let webAppBackgroundColor = UIColor(red:0.200, green:0.478, blue:0.718, alpha:1.00)
@@ -47,9 +47,9 @@ class ApplicationController {
 
   func startApplication() {
     appConfig = Config()
-    self.entryPointUrl = appConfig!.entryPointUrl
-    self.signInUrl = NSURL(string: self.entryPointUrl!.absoluteString.stringByReplacingOccurrencesOfString("/mobile/welcome", withString: "/sign_in"))
-    self.dashboardUrl = NSURL(string: self.entryPointUrl!.absoluteString.stringByReplacingOccurrencesOfString("/mobile/welcome", withString: "/mobile/dashboard"))
+    self.entryPointUrl = appConfig!.entryPointUrl as URL?
+    self.signInUrl = URL(string: self.entryPointUrl!.absoluteString.replacingOccurrences(of: "/mobile/welcome", with: "/sign_in"))
+    self.dashboardUrl = URL(string: self.entryPointUrl!.absoluteString.replacingOccurrences(of: "/mobile/welcome", with: "/mobile/dashboard"))
 
     navigationController = NavigationController()
     navigationController!.applicationController = self
@@ -59,9 +59,9 @@ class ApplicationController {
 
     self.splitViewController = SplitViewController()
     self.splitViewController!.viewControllers = [navigationController!, emptyViewController]
-    self.splitViewController?.preferredDisplayMode = .AllVisible
+    self.splitViewController?.preferredDisplayMode = .allVisible
 
-    emptyViewController.navigationController?.popToRootViewControllerAnimated(false)
+    emptyViewController.navigationController?.popToRootViewController(animated: false)
 
     window?.rootViewController = splitViewController
 
@@ -72,7 +72,7 @@ class ApplicationController {
     visit(self.entryPointUrl!)
   }
 
-  func visit(url: NSURL) {
+  func visit(_ url: URL) {
     navigationController!.visit(url)
   }
 
