@@ -66,7 +66,7 @@ extension NavigationController {
     applicationController!.turbolinksSession.visit(visitableViewController)
   }
 
-  func presentContactViewController(vcardString: String) {
+  func presentContactViewController(_ vcardString: String) {
     let vcardData = vcardString.data(using: String.Encoding.utf8)
     let contactViewController = CNContactViewController(vcardData: vcardData!)
     preferSplitScreen()
@@ -112,7 +112,7 @@ extension NavigationController {
 extension NavigationController: WKScriptMessageHandler {
   func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     if let message = message.body as? String {
-      presentContactViewController(vcardString: message)
+      presentContactViewController(message)
     }
   }
 }
@@ -194,7 +194,7 @@ extension NavigationController: WKNavigationDelegate {
 
     if url.pathExtension == "vcf" {
       webView.readUrlContent(url) { (result: String) in
-        self.presentContactViewController(vcardString: result)
+        self.presentContactViewController(result)
       }
     }
 
