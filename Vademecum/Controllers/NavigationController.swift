@@ -66,6 +66,15 @@ extension NavigationController {
     applicationController!.turbolinksSession.visit(visitableViewController)
   }
 
+  func presentContactsViewController(_ url: URL) {
+    let contactsViewController = ContactsViewController(url: url)
+    contactsViewController.applicationController = self.applicationController
+    currentVisitableViewController = contactsViewController
+    pushViewController(contactsViewController, animated: true)
+    preferSplitScreen()
+    applicationController!.turbolinksSession.visit(contactsViewController)
+  }
+
   func presentContactViewController(_ vcardString: String) {
     let vcardData = vcardString.data(using: String.Encoding.utf8)
     let contactViewController = CNContactViewController(vcardData: vcardData!)
@@ -77,7 +86,6 @@ extension NavigationController {
     let pdfViewController = PdfViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     self.applicationController?.splitViewController?.showDetailViewController(pdfViewController, sender: self)
   }
-
 //  func presentEventViewController(icsString: String) {
 //    let eventViewController = EventViewController(icsString: icsString)
 //    pushViewController(eventViewController, animated: true)
@@ -123,6 +131,8 @@ extension NavigationController: SessionDelegate {
 
     if URL.path.contains("/sign_in") {
       presentAuthenticationViewController(applicationController!.dashboardUrl! as URL)
+    } else if URL.path.contains("/mobile/contacts") {
+      presentContactsViewController(URL)
     } else {
       visit(URL, action: action.rawValue)
     }
