@@ -5,6 +5,7 @@ class ApplicationController {
   var window: UIWindow?
   var navigationController: NavigationController?
   var splitViewController: SplitViewController?
+  var jsonRequestsController: JsonRequestsController?
 
   var application: UIApplication {
     return UIApplication.shared
@@ -53,6 +54,9 @@ class ApplicationController {
 
     navigationController = NavigationController()
     navigationController!.applicationController = self
+
+    jsonRequestsController = JsonRequestsController()
+    jsonRequestsController!.applicationController = self
 
     let emptyViewController = EmptyViewController()
     emptyViewController.applicationController = self
