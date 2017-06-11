@@ -56,5 +56,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Anhand Deines Aufenthaltsortes können wir Adressen von Personen in Deiner Nähe anzeigen. Außerdem zählen wir, wie viele Leute auf dem Wingolfshaus sind. Wenn es viele sind, wird ein Event erstellt. Die Information wird gelöscht, sobald Du das Haus wieder verlässt.</string>
 </dict>
 </plist>

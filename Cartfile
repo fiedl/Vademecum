@@ -1,1 +1,2 @@
 github "turbolinks/turbolinks-ios" "swift-3.0"
+github "hkellaway/Gloss"

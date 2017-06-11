@@ -16,6 +16,10 @@ class ApplicationController {
   var signInUrl: URL?
   var dashboardUrl: URL?
 
+  lazy var baseUrl: String = {
+    return self.entryPointUrl!.absoluteString.replacingOccurrences(of: "/mobile/welcome", with: "/")
+  }()
+
   //let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
   let webAppBackgroundColor = UIColor(red:0.200, green:0.478, blue:0.718, alpha:1.00)
 
@@ -80,4 +84,22 @@ class ApplicationController {
     navigationController!.visit(url)
   }
 
+}
+
+// https://stackoverflow.com/a/35272346/2066546
+extension UIApplication
+{
+  func isRunningInFullScreen() -> Bool
+  {
+    if let w = self.keyWindow
+    {
+      let maxScreenSize = max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
+      let minScreenSize = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
+      let maxAppSize = max(w.bounds.size.width, w.bounds.size.height)
+      let minAppSize = min(w.bounds.size.width, w.bounds.size.height)
+      return maxScreenSize == maxAppSize && minScreenSize == minAppSize
+    }
+
+    return true
+  }
 }

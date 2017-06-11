@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		25046EAC1D66650B00F0AAB1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25046EAB1D66650B00F0AAB1 /* Device.swift */; };
+		2509AA751EEC7C8F00A75202 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509AA741EEC7C8F00A75202 /* MapViewController.swift */; };
+		2509AA761EEC7C8F00A75202 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509AA741EEC7C8F00A75202 /* MapViewController.swift */; };
+		2509AA791EEC807100A75202 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2509AA781EEC807100A75202 /* MapKit.framework */; };
+		2509AA7A1EEC80A600A75202 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2509AA781EEC807100A75202 /* MapKit.framework */; };
+		253E579F1EED43E300D22068 /* JsonRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E579E1EED43E300D22068 /* JsonRequestsController.swift */; };
+		253E57A01EED43E300D22068 /* JsonRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E579E1EED43E300D22068 /* JsonRequestsController.swift */; };
+		253E57A21EED623E00D22068 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E57A11EED623E00D22068 /* Gloss.framework */; };
+		253E57A31EED623E00D22068 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 253E57A11EED623E00D22068 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		253E57A51EED624600D22068 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E57A41EED624600D22068 /* Gloss.framework */; };
+		253E57A61EED624600D22068 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 253E57A41EED624600D22068 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		253E57A81EED655300D22068 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E57A71EED655300D22068 /* MapLocation.swift */; };
+		253E57A91EED655300D22068 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E57A71EED655300D22068 /* MapLocation.swift */; };
 		25505A161D6B7E8D009DC1BF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A151D6B7E8D009DC1BF /* SplitViewController.swift */; };
 		25505A181D6BB656009DC1BF /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A171D6BB656009DC1BF /* EmptyViewController.swift */; };
 		25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25505A191D6BC746009DC1BF /* UIImage.swift */; };
@@ -73,6 +85,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				25AEF6C41DF4C40000BA03BE /* Turbolinks.framework in Embed Frameworks */,
+				253E57A61EED624600D22068 /* Gloss.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +97,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				25ADF3C11DECE1ED004B6058 /* Turbolinks.framework in Embed Frameworks */,
+				253E57A31EED623E00D22068 /* Gloss.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +106,12 @@
 
 /* Begin PBXFileReference section */
 		25046EAB1D66650B00F0AAB1 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		2509AA741EEC7C8F00A75202 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
+		2509AA781EEC807100A75202 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		253E579E1EED43E300D22068 /* JsonRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonRequestsController.swift; path = Controllers/JsonRequestsController.swift; sourceTree = "<group>"; };
+		253E57A11EED623E00D22068 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		253E57A41EED624600D22068 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		253E57A71EED655300D22068 /* MapLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapLocation.swift; path = Models/MapLocation.swift; sourceTree = "<group>"; };
 		25505A151D6B7E8D009DC1BF /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitViewController.swift; path = Controllers/SplitViewController.swift; sourceTree = "<group>"; };
 		25505A171D6BB656009DC1BF /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Controllers/EmptyViewController.swift; sourceTree = "<group>"; };
 		25505A191D6BC746009DC1BF /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Models/UIImage.swift; sourceTree = "<group>"; };
@@ -130,7 +150,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2509AA791EEC807100A75202 /* MapKit.framework in Frameworks */,
 				25ADF3C01DECE1ED004B6058 /* Turbolinks.framework in Frameworks */,
+				253E57A21EED623E00D22068 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,13 +160,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2509AA7A1EEC80A600A75202 /* MapKit.framework in Frameworks */,
 				25AEF6C31DF4C40000BA03BE /* Turbolinks.framework in Frameworks */,
+				253E57A51EED624600D22068 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2509AA771EEC807100A75202 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2509AA781EEC807100A75202 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2550CDDE1D65921000A8F7F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +192,8 @@
 				25505A171D6BB656009DC1BF /* EmptyViewController.swift */,
 				25505A1B1D6F9472009DC1BF /* WebViewController.swift */,
 				25505A451D70C618009DC1BF /* AuthenticationViewController.swift */,
+				2509AA741EEC7C8F00A75202 /* MapViewController.swift */,
+				253E579E1EED43E300D22068 /* JsonRequestsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +206,7 @@
 				25046EAB1D66650B00F0AAB1 /* Device.swift */,
 				25505A191D6BC746009DC1BF /* UIImage.swift */,
 				25505A401D707707009DC1BF /* Config.swift */,
+				253E57A71EED655300D22068 /* MapLocation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -192,10 +227,13 @@
 		2579F1711D5DEF9700EA2299 = {
 			isa = PBXGroup;
 			children = (
+				253E57A41EED624600D22068 /* Gloss.framework */,
+				253E57A11EED623E00D22068 /* Gloss.framework */,
 				25AEF6C21DF4C40000BA03BE /* Turbolinks.framework */,
 				25ADF3BF1DECE1ED004B6058 /* Turbolinks.framework */,
 				2579F17C1D5DEF9800EA2299 /* Vademecum */,
 				2579F17B1D5DEF9800EA2299 /* Products */,
+				2509AA771EEC807100A75202 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,11 +312,21 @@
 				TargetAttributes = {
 					25505A1D1D706B0C009DC1BF = {
 						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2579F1791D5DEF9800EA2299 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = N2PZG7C8MS;
 						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -340,6 +388,7 @@
 				25505A241D706B0C009DC1BF /* UIView.swift in Sources */,
 				25505A251D706B0C009DC1BF /* ContactViewController.swift in Sources */,
 				25505A261D706B0C009DC1BF /* FileViewController.swift in Sources */,
+				2509AA761EEC7C8F00A75202 /* MapViewController.swift in Sources */,
 				25505A271D706B0C009DC1BF /* WKWebView.swift in Sources */,
 				25505A281D706B0C009DC1BF /* Vademecum.xcdatamodeld in Sources */,
 				25505A471D7338C2009DC1BF /* AuthenticationViewController.swift in Sources */,
@@ -351,7 +400,9 @@
 				25505A2E1D706B0C009DC1BF /* ErrorView.swift in Sources */,
 				25505A2F1D706B0C009DC1BF /* UIImage.swift in Sources */,
 				25505A421D707C8D009DC1BF /* Config.swift in Sources */,
+				253E57A91EED655300D22068 /* MapLocation.swift in Sources */,
 				25505A301D706B0C009DC1BF /* PdfViewController.swift in Sources */,
+				253E57A01EED43E300D22068 /* JsonRequestsController.swift in Sources */,
 				25505A311D706B0C009DC1BF /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +420,7 @@
 				2550CDEA1D660B3000A8F7F6 /* UIView.swift in Sources */,
 				259EC50C1D64AA2C00FDF70E /* ContactViewController.swift in Sources */,
 				2550CDEC1D661A7400A8F7F6 /* FileViewController.swift in Sources */,
+				2509AA751EEC7C8F00A75202 /* MapViewController.swift in Sources */,
 				259173F61D685F8700594500 /* WKWebView.swift in Sources */,
 				2579F1861D5DEF9800EA2299 /* Vademecum.xcdatamodeld in Sources */,
 				25505A461D70C618009DC1BF /* AuthenticationViewController.swift in Sources */,
@@ -380,7 +432,9 @@
 				2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */,
 				25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */,
 				25505A411D707707009DC1BF /* Config.swift in Sources */,
+				253E57A81EED655300D22068 /* MapLocation.swift in Sources */,
 				2550CDE81D6606EB00A8F7F6 /* PdfViewController.swift in Sources */,
+				253E579F1EED43E300D22068 /* JsonRequestsController.swift in Sources */,
 				25505A161D6B7E8D009DC1BF /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

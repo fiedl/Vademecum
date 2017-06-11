@@ -16,7 +16,7 @@ class JsonRequestsController: NSObject {
   }()
 
   lazy var baseUrl: String = {
-    return self.applicationController!.entryPointUrl!.absoluteString.replacingOccurrences(of: "/mobile/welcome", with: "/")
+    return self.applicationController!.baseUrl
   }()
 
   func get(path: String, callback: @escaping ((String) -> (Void))) {

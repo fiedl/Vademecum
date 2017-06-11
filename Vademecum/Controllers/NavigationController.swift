@@ -82,6 +82,14 @@ extension NavigationController {
     showDetailViewController(contactViewController, sender: self)
   }
 
+  func presentContactViewController(url: URL) {
+    let webView = (self.viewControllers.first as! VisitableViewController).visitableView.webView!
+    webView.readUrlContent(url) { (result: String) in
+      self.presentContactViewController(result)
+    }
+
+  }
+
   func presentPdfViewController(_ url: URL) {
     let pdfViewController = PdfViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     self.applicationController?.splitViewController?.showDetailViewController(pdfViewController, sender: self)
@@ -95,6 +103,12 @@ extension NavigationController {
     let eventViewController = WebViewController(url: url, webViewConfiguration: self.applicationController!.webViewConfiguration)
     preferSplitScreen()
     showDetailViewController(eventViewController, sender: self)
+  }
+
+  func presentMapViewController(_ url: URL) {
+    let mapViewController = MapViewController()
+    mapViewController.applicationController = self.applicationController
+    pushViewController(mapViewController, animated: true)
   }
 
   func presentAuthenticationViewController(_ url: URL) {
@@ -133,6 +147,8 @@ extension NavigationController: SessionDelegate {
       presentAuthenticationViewController(applicationController!.dashboardUrl! as URL)
     } else if URL.path.contains("/mobile/contacts") {
       presentContactsViewController(URL)
+    } else if URL.path.contains("/mobile/nearby_locations") {
+      presentMapViewController(URL)
     } else {
       visit(URL, action: action.rawValue)
     }
