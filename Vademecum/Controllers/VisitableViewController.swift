@@ -10,6 +10,24 @@ class VisitableViewController: Turbolinks.VisitableViewController {
     if let applicationController = applicationController {
       visitableView.backgroundColor = applicationController.webAppBackgroundColor
     }
+
+    // https://stackoverflow.com/a/40263064/2066546
+    NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+
+  }
+
+  func rotated() {
+    // This does nothing, but may be overridden to resize controls on device orientation change.
+
+    //    if UIDevice.current.orientation.isLandscape {
+    //      print("Landscape")
+    //    } else {
+    //      print("Portrait")
+    //    }
+  }
+
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
 
   override func willMove(toParentViewController parent: UIViewController?) {

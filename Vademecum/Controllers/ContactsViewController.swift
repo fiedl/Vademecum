@@ -3,6 +3,7 @@ import WebKit
 class ContactsViewController: VisitableViewController {
 
   let searchController = UISearchController(searchResultsController: nil)
+  let searchBar = UISearchBar()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -10,16 +11,25 @@ class ContactsViewController: VisitableViewController {
     self.definesPresentationContext = true
 
     // https://stackoverflow.com/a/40013996/2066546
-    let searchBar = UISearchBar()
     searchBar.placeholder = "Search"
     searchBar.searchBarStyle = UISearchBarStyle.prominent
-    searchBar.frame = CGRect(x: 0, y: 64, width: (navigationController?.view.bounds.size.width)!, height: 64)
     searchBar.barStyle = .default
     searchBar.isTranslucent = false
     searchBar.barTintColor = applicationController!.webAppBackgroundColor
     searchBar.backgroundImage = UIImage()
     searchBar.delegate = self
+    setSearchBarPosition()
     view.addSubview(searchBar)
+  }
+
+  override func rotated() {
+    setSearchBarPosition()
+  }
+
+  func setSearchBarPosition() {
+    let navigationBarFrame = navigationController?.navigationBar.frame
+    let y_coordinate = (navigationBarFrame?.origin.y)! + (navigationBarFrame?.size.height)!
+    searchBar.frame = CGRect(x: 0, y: y_coordinate, width: (navigationController?.view.bounds.size.width)!, height: 64)
   }
 
 }
