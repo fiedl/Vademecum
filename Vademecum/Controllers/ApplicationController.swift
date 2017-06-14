@@ -20,6 +20,10 @@ class ApplicationController {
     return self.entryPointUrl!.absoluteString.replacingOccurrences(of: "/mobile/welcome", with: "/")
   }()
 
+  lazy var entryPointUrlWithAppVersion: URL = {
+    return URL(string: self.entryPointUrl!.absoluteString + "?app=ios&version=\(self.appConfig!.version)")!
+  }()
+
   //let webAppBackgroundColor = UIColor(red: 0, green: 103/255, blue: 170/255, alpha: 1)
   let webAppBackgroundColor = UIColor(red:0.200, green:0.478, blue:0.718, alpha:1.00)
 
@@ -77,7 +81,7 @@ class ApplicationController {
   }
 
   func visitEntryPointUrl() {
-    visit(self.entryPointUrl!)
+    visit(self.entryPointUrlWithAppVersion)
   }
 
   func visit(_ url: URL) {
