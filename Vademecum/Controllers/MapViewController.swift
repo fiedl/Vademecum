@@ -12,8 +12,6 @@ class MapViewController: UIViewController {
   // https://stackoverflow.com/a/32209584/2066546
   var mapView : MKMapView! = MKMapView()
 
-  let locationManager = CLLocationManager()
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -21,15 +19,7 @@ class MapViewController: UIViewController {
     mapView.bindFrameToSuperviewBounds()  // http://stackoverflow.com/a/32824659/2066546
     self.title = "Laden ..."  // http://stackoverflow.com/a/39022302/2066546
 
-
-    // https://stackoverflow.com/q/25449469/2066546
-    if (CLLocationManager.locationServicesEnabled())
-    {
-      locationManager.delegate = self
-      locationManager.desiredAccuracy = kCLLocationAccuracyBest
-      locationManager.requestAlwaysAuthorization()
-      locationManager.startUpdatingLocation()
-    }
+    applicationController?.locationChangeController?.setupLocationManagerForBackgroundUpdates()
 
     // https://stackoverflow.com/a/37725783/2066546
     mapView.delegate = self
@@ -62,17 +52,6 @@ class MapViewController: UIViewController {
 
   func presentContactForLocation(location: MapLocation) {
     applicationController!.navigationController!.presentContactViewController(url: URL(string: applicationController!.baseUrl + location.vcard_path!)!)
-  }
-
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-
-  // https://stackoverflow.com/a/25451592/2066546
-  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    let location = locations.last as! CLLocation
-
-    print("found location")
   }
 
 }

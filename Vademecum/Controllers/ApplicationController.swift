@@ -6,6 +6,7 @@ class ApplicationController {
   var navigationController: NavigationController?
   var splitViewController: SplitViewController?
   var jsonRequestsController: JsonRequestsController?
+  var locationChangeController: LocationChangeController?
 
   var application: UIApplication {
     return UIApplication.shared
@@ -33,7 +34,7 @@ class ApplicationController {
     let configuration = WKWebViewConfiguration()
     configuration.processPool = self.webViewProcessPool
     configuration.applicationNameForUserAgent = "vademecum"
-//    configuration.userContentController.addScriptMessageHandler(self.navigationController!, name: "display_vcf_data")
+    configuration.userContentController.add(self.navigationController!, name: "navigation")
     return configuration
   }()
 
@@ -65,6 +66,9 @@ class ApplicationController {
 
     jsonRequestsController = JsonRequestsController()
     jsonRequestsController!.applicationController = self
+
+    locationChangeController = LocationChangeController()
+    locationChangeController!.applicationController = self
 
     let emptyViewController = EmptyViewController()
     emptyViewController.applicationController = self
