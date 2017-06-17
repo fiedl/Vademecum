@@ -76,6 +76,8 @@ class ApplicationController {
     self.splitViewController = SplitViewController()
     self.splitViewController!.viewControllers = [navigationController!, emptyViewController]
     self.splitViewController?.preferredDisplayMode = .allVisible
+    //self.splitViewController?.preferredPrimaryColumnWidthFraction = 0.5
+
 
     emptyViewController.navigationController?.popToRootViewController(animated: false)
 

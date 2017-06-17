@@ -45,6 +45,10 @@ extension NavigationController {
     pushViewController(viewController, animated: false)
   }
 
+  func presentRootController() {
+    visit(applicationController!.dashboardUrl!)
+  }
+
   func presentVisitableViewController(_ url: URL, action: String) {
 
     let visitableViewController = VisitableViewController(url: url)
@@ -111,6 +115,32 @@ extension NavigationController {
     pushViewController(mapViewController, animated: true)
   }
 
+  func presentPhotoViewController() {
+    let photoViewController = PhotoViewController()
+    photoViewController.webViewConfiguration = applicationController!.webViewConfiguration
+    photoViewController.applicationController = applicationController!
+    applicationController?.window?.rootViewController = photoViewController
+  }
+
+  func presentPhotoViewController(_ url: URL) {
+    presentPhotoViewController()
+    let photoViewController = applicationController?.window?.rootViewController as! PhotoViewController
+    photoViewController.url = url
+    photoViewController.webView.load(URLRequest(url: url))
+    photoViewController.webView.navigationDelegate = photoViewController
+  }
+
+  func hidePhotoViewController() {
+    let photoViewController = (applicationController?.window?.rootViewController as! PhotoViewController)
+    let webView = photoViewController.webView
+    photoViewController.restoreWebView()
+    currentVisitableViewController!.visitableView.activateWebView(webView, forVisitable: applicationController!.turbolinksSession.topmostVisitable!)
+    //webView.frame = CGRect.zero
+    //webView.bindFrameToSuperviewBounds()
+    applicationController?.window?.rootViewController = applicationController?.splitViewController
+    //presentRootController()
+  }
+
   func presentAuthenticationViewController(_ url: URL) {
     let authenticationViewController = AuthenticationViewController()
     authenticationViewController.delegate = self
@@ -132,11 +162,34 @@ extension NavigationController {
 // MARK: Handle incoming navigation messages from javascript
 
 extension NavigationController: WKScriptMessageHandler {
+
   func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     if let message = message.body as? String {
-      presentContactViewController(message)
+
+      if message == "enterFullscreen" {
+        //enterFullscreen()
+      } else if message == "leaveFullscreen" {
+        //leaveFullscreen()
+        hidePhotoViewController()
+      } else {
+        presentContactViewController(message)
+      }
     }
   }
+
+//  func leaveFullscreen() {
+//    self.setNavigationBarHidden(false, animated: false)
+//    self.currentVisitableViewController?.setWebViewPosition()
+//  }
+//
+//  func enterFullscreen() {
+//    self.setNavigationBarHidden(true, animated: false)
+//
+//    NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "statusBarTappedNotification"), object: .none, queue: .none) { _ in
+//      self.leaveFullscreen()
+//    }
+//    self.currentVisitableViewController?.setWebViewPosition()
+//  }
 }
 
 extension NavigationController: SessionDelegate {
@@ -149,6 +202,10 @@ extension NavigationController: SessionDelegate {
       presentContactsViewController(URL)
     } else if URL.path.contains("/mobile/nearby_locations") {
       presentMapViewController(URL)
+    } else if URL.path.contains("/mobile/photos/") {
+      presentPhotoViewController()
+    } else if URL.path.contains("/mobile/photos") {
+      presentPhotoViewController(URL)
     } else {
       visit(URL, action: action.rawValue)
     }
@@ -225,6 +282,12 @@ extension NavigationController: WKNavigationDelegate {
     }
 
     // Calendar Subscriptions
+    if url.absoluteString.contains("webcal://") {
+      // https://stackoverflow.com/a/25945530/2066546
+      UIApplication.shared.openURL(url)
+    }
+
+
 //    if url.pathExtension == "ics" {
 //      let store = EKEventStore()
 //      store.requestAccessToEntityType(.Event) { (granted: Bool, error: NSError?) in

@@ -3,6 +3,7 @@ import WebKit
 class WebViewController: UIViewController {
   var url: URL?
   var webViewConfiguration: WKWebViewConfiguration?
+  var applicationController: ApplicationController?
 
   convenience init(url: URL) {
     self.init()
@@ -38,3 +39,4 @@ extension WebViewController: WKNavigationDelegate {
   }
   
 }
+

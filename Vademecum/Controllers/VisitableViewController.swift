@@ -1,6 +1,7 @@
 import Turbolinks
 import UIKit
 
+
 class VisitableViewController: Turbolinks.VisitableViewController {
   var applicationController: ApplicationController?
 
@@ -62,4 +63,12 @@ class VisitableViewController: Turbolinks.VisitableViewController {
     errorView.removeFromSuperview()
     reloadVisitable()
   }
+
+  func setWebViewPosition() {
+    let navigationBarFrame = navigationController?.navigationBar.frame
+    let y_coordinate = (navigationBarFrame?.origin.y)! + (navigationBarFrame?.size.height)!
+    visitableView.webView!.frame.origin.y = y_coordinate
+    //searchBar.frame = CGRect(x: 0, y: y_coordinate, width: (navigationController?.view.bounds.size.width)!, height: 64)
+  }
+
 }
