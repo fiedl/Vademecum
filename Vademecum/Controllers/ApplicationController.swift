@@ -82,6 +82,7 @@ class ApplicationController {
     window?.rootViewController = splitViewController
 
     visitEntryPointUrl()
+    navigationController?.currentVisitableViewController?.title = "Lade Vademecum ..."
   }
 
   func visitEntryPointUrl() {
