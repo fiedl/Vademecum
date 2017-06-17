@@ -40,6 +40,14 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Du kannst Veranstaltungsbilder aus Deiner Foto-Bibliothek hochladen.</string>
+	<key>NSPhotoLibraryUsageDescription - 2</key>
+	<string>Du kannst Veranstaltungsbilder aus Deiner Foto-Bibliothek hochladen.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -62,6 +70,5 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Anhand Deines Aufenthaltsortes können wir Adressen von Personen in Deiner Nähe anzeigen. Außerdem zählen wir, wie viele Leute auf dem Wingolfshaus sind. Wenn es viele sind, wird ein Event erstellt. Die Information wird gelöscht, sobald Du das Haus wieder verlässt.</string>
 </dict>
 </plist>

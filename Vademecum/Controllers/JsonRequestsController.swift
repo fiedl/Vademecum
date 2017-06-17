@@ -24,6 +24,13 @@ class JsonRequestsController: NSObject {
     self.current_callback = callback
   }
 
+  func post(path: String) {
+    print("requesting \(path)")
+    var request = URLRequest(url: URL(string: self.baseUrl + path)!)
+    request.httpMethod = "POST"
+    webView.load(request)
+  }
+
 }
 
 extension JsonRequestsController : WKScriptMessageHandler {
