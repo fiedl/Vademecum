@@ -224,6 +224,7 @@ extension NavigationController: WKNavigationDelegate {
       }
     }
 
+    // Calendar Subscriptions
 //    if url.pathExtension == "ics" {
 //      let store = EKEventStore()
 //      store.requestAccessToEntityType(.Event) { (granted: Bool, error: NSError?) in
