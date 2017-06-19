@@ -8,6 +8,8 @@ class VisitableViewController: Turbolinks.VisitableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.visitableView.activityIndicatorView.color = UIColor.white
+
     if let applicationController = applicationController {
       visitableView.backgroundColor = applicationController.webAppBackgroundColor
     }
