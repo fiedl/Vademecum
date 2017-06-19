@@ -62,12 +62,17 @@ extension NavigationController {
       replaceCurrentViewControllerWith(visitableViewController)
     } else if action == "root" {
       showViewControllerAsRoot(visitableViewController)
+    } else if action == "fullscreen" {
+      let fullscreenVisitableViewController = FullscreenVisitableViewController(url: url)
+      fullscreenVisitableViewController.applicationController = self.applicationController
+      currentVisitableViewController = fullscreenVisitableViewController
+      fullscreenVisitableViewController.enterFullscreen()
     } else {
       fatalError("Action \(action) not handled.")
     }
 
     preferSplitScreen()
-    applicationController!.turbolinksSession.visit(visitableViewController)
+    applicationController!.turbolinksSession.visit(currentVisitableViewController!)
   }
 
   func presentContactsViewController(_ url: URL) {
@@ -115,30 +120,11 @@ extension NavigationController {
     pushViewController(mapViewController, animated: true)
   }
 
-  func presentPhotoViewController() {
-    let photoViewController = PhotoViewController()
-    photoViewController.webViewConfiguration = applicationController!.webViewConfiguration
-    photoViewController.applicationController = applicationController!
-    applicationController?.window?.rootViewController = photoViewController
-  }
-
-  func presentPhotoViewController(_ url: URL) {
-    presentPhotoViewController()
-    let photoViewController = applicationController?.window?.rootViewController as! PhotoViewController
-    photoViewController.url = url
-    photoViewController.webView.load(URLRequest(url: url))
-    photoViewController.webView.navigationDelegate = photoViewController
-  }
-
-  func hidePhotoViewController() {
-    let photoViewController = (applicationController?.window?.rootViewController as! PhotoViewController)
-    let webView = photoViewController.webView
-    photoViewController.restoreWebView()
-    currentVisitableViewController!.visitableView.activateWebView(webView, forVisitable: applicationController!.turbolinksSession.topmostVisitable!)
-    //webView.frame = CGRect.zero
-    //webView.bindFrameToSuperviewBounds()
-    applicationController?.window?.rootViewController = applicationController?.splitViewController
-    //presentRootController()
+  func presentPhotoIndexViewController(_ url: URL) {
+    // Case: Switch current visitable to full screen mode and navigate to the
+    // given photo index url.
+    visit(url, action: "fullscreen")
+    (applicationController!.window!.rootViewController as! FullscreenVisitableViewController).setLoadingText(text: "Fotos laden ...")
   }
 
   func presentAuthenticationViewController(_ url: URL) {
@@ -167,29 +153,28 @@ extension NavigationController: WKScriptMessageHandler {
     if let message = message.body as? String {
 
       if message == "enterFullscreen" {
-        //enterFullscreen()
+        enterFullscreen()
       } else if message == "leaveFullscreen" {
-        //leaveFullscreen()
-        hidePhotoViewController()
+        leaveFullscreen()
       } else {
         presentContactViewController(message)
       }
     }
   }
 
-//  func leaveFullscreen() {
-//    self.setNavigationBarHidden(false, animated: false)
-//    self.currentVisitableViewController?.setWebViewPosition()
-//  }
-//
-//  func enterFullscreen() {
-//    self.setNavigationBarHidden(true, animated: false)
-//
-//    NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "statusBarTappedNotification"), object: .none, queue: .none) { _ in
-//      self.leaveFullscreen()
-//    }
-//    self.currentVisitableViewController?.setWebViewPosition()
-//  }
+  func enterFullscreen() {
+    let fullscreenVisitableViewController = FullscreenVisitableViewController()
+    fullscreenVisitableViewController.applicationController = applicationController
+    fullscreenVisitableViewController.takeOverWebView(from: currentVisitableViewController!)
+    fullscreenVisitableViewController.enterFullscreen()
+  }
+
+  func leaveFullscreen() {
+    let fullscreenVisitableViewController = (applicationController?.window?.rootViewController as! FullscreenVisitableViewController)
+    fullscreenVisitableViewController.putWebViewBack(to: applicationController!.turbolinksSession.topmostVisitable!)
+    fullscreenVisitableViewController.leaveFullscreen()
+  }
+
 }
 
 extension NavigationController: SessionDelegate {
@@ -202,10 +187,8 @@ extension NavigationController: SessionDelegate {
       presentContactsViewController(URL)
     } else if URL.path.contains("/mobile/nearby_locations") {
       presentMapViewController(URL)
-    } else if URL.path.contains("/mobile/photos/") {
-      presentPhotoViewController()
     } else if URL.path.contains("/mobile/photos") {
-      presentPhotoViewController(URL)
+      presentPhotoIndexViewController(URL)
     } else {
       visit(URL, action: action.rawValue)
     }
@@ -239,6 +222,9 @@ extension NavigationController: SessionDelegate {
 
   func sessionDidFinishRequest(_ session: Session) {
     applicationController!.application.isNetworkActivityIndicatorVisible = false
+    if let fullscreenViewController = currentVisitableViewController as? FullscreenVisitableViewController {
+      fullscreenViewController.loadingLabel.text = ""
+    }
   }
 
   func sessionDidLoadWebView(_ session: Session) {

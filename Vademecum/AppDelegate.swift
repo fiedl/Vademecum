@@ -28,18 +28,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     }
 
-  // https://stackoverflow.com/a/18953439/2066546
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super.touchesBegan(touches, with: event)
-
-    let statusBarRect = UIApplication.shared.statusBarFrame
-    guard let touchPoint = event?.allTouches?.first?.location(in: self.window) else { return }
-
-    let statusBarTappedNotification = Notification(name: Notification.Name(rawValue: "statusBarTappedNotification"))
-
-    if statusBarRect.contains(touchPoint) {
-      NotificationCenter.default.post(statusBarTappedNotification)
-    }
-  }
-
 }

@@ -16,6 +16,8 @@
 		252A925C1EF1E899007C9CEE /* LocationChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A925A1EF1E899007C9CEE /* LocationChangeController.swift */; };
 		252A925E1EF46710007C9CEE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A925D1EF46710007C9CEE /* PhotoViewController.swift */; };
 		252A925F1EF46710007C9CEE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A925D1EF46710007C9CEE /* PhotoViewController.swift */; };
+		252A92641EF5113A007C9CEE /* FullscreenVisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */; };
+		252A92651EF5113A007C9CEE /* FullscreenVisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */; };
 		253E579F1EED43E300D22068 /* JsonRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E579E1EED43E300D22068 /* JsonRequestsController.swift */; };
 		253E57A01EED43E300D22068 /* JsonRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E579E1EED43E300D22068 /* JsonRequestsController.swift */; };
 		253E57A21EED623E00D22068 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E57A11EED623E00D22068 /* Gloss.framework */; };
@@ -114,6 +116,7 @@
 		2509AA781EEC807100A75202 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		252A925A1EF1E899007C9CEE /* LocationChangeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationChangeController.swift; path = Controllers/LocationChangeController.swift; sourceTree = "<group>"; };
 		252A925D1EF46710007C9CEE /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = Controllers/PhotoViewController.swift; sourceTree = "<group>"; };
+		252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullscreenVisitableViewController.swift; path = Controllers/FullscreenVisitableViewController.swift; sourceTree = "<group>"; };
 		253E579E1EED43E300D22068 /* JsonRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonRequestsController.swift; path = Controllers/JsonRequestsController.swift; sourceTree = "<group>"; };
 		253E57A11EED623E00D22068 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		253E57A41EED624600D22068 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 				253E579E1EED43E300D22068 /* JsonRequestsController.swift */,
 				252A925A1EF1E899007C9CEE /* LocationChangeController.swift */,
 				252A925D1EF46710007C9CEE /* PhotoViewController.swift */,
+				252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -405,6 +409,7 @@
 				252A925C1EF1E899007C9CEE /* LocationChangeController.swift in Sources */,
 				25505A471D7338C2009DC1BF /* AuthenticationViewController.swift in Sources */,
 				25505A291D706B0C009DC1BF /* AppDelegate.swift in Sources */,
+				252A92651EF5113A007C9CEE /* FullscreenVisitableViewController.swift in Sources */,
 				25505A2A1D706B0C009DC1BF /* EmptyViewController.swift in Sources */,
 				25505A2B1D706B0C009DC1BF /* EventViewController.swift in Sources */,
 				25505A2C1D706B0C009DC1BF /* Error.swift in Sources */,
@@ -439,6 +444,7 @@
 				252A925B1EF1E899007C9CEE /* LocationChangeController.swift in Sources */,
 				25505A461D70C618009DC1BF /* AuthenticationViewController.swift in Sources */,
 				2579F17E1D5DEF9800EA2299 /* AppDelegate.swift in Sources */,
+				252A92641EF5113A007C9CEE /* FullscreenVisitableViewController.swift in Sources */,
 				25505A181D6BB656009DC1BF /* EmptyViewController.swift in Sources */,
 				259173F41D67A7D800594500 /* EventViewController.swift in Sources */,
 				2579F1AF1D5E734900EA2299 /* Error.swift in Sources */,
