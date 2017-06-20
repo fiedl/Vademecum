@@ -65,11 +65,8 @@ extension NavigationController {
     } else if action == "fullscreen" {
       let fullscreenVisitableViewController = FullscreenVisitableViewController(url: url)
       fullscreenVisitableViewController.applicationController = self.applicationController
-      let fullscreenNavigationController = FullscreenNavigationController()
-      fullscreenNavigationController.applicationController = self.applicationController
-      fullscreenNavigationController.present(viewController: fullscreenVisitableViewController)
       currentVisitableViewController = fullscreenVisitableViewController
-      fullscreenNavigationController.enterFullscreen()
+      fullscreenVisitableViewController.enterFullscreen()
     } else {
       fatalError("Action \(action) not handled.")
     }
@@ -127,7 +124,7 @@ extension NavigationController {
     // Case: Switch current visitable to full screen mode and navigate to the
     // given photo index url.
     visit(url, action: "fullscreen")
-    //(applicationController!.window!.rootViewController as! FullscreenVisitableViewController).setLoadingText(text: "Fotos laden ...")
+    (applicationController!.window!.rootViewController as! FullscreenVisitableViewController).setLoadingText(text: "Fotos laden ...")
   }
 
   func presentAuthenticationViewController(_ url: URL) {
@@ -173,10 +170,9 @@ extension NavigationController: WKScriptMessageHandler {
   }
 
   func leaveFullscreen() {
-    let fullscreenNavigationController = (applicationController?.window?.rootViewController as! FullscreenNavigationController)
-    let fullscreenVisitableViewController = fullscreenNavigationController.viewControllers.first as! FullscreenVisitableViewController
+    let fullscreenVisitableViewController = (applicationController?.window?.rootViewController as! FullscreenVisitableViewController)
     fullscreenVisitableViewController.putWebViewBack(to: applicationController!.turbolinksSession.topmostVisitable!)
-    fullscreenNavigationController.leaveFullscreen()
+    fullscreenVisitableViewController.leaveFullscreen()
   }
 
 }

@@ -18,8 +18,6 @@
 		252A925F1EF46710007C9CEE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A925D1EF46710007C9CEE /* PhotoViewController.swift */; };
 		252A92641EF5113A007C9CEE /* FullscreenVisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */; };
 		252A92651EF5113A007C9CEE /* FullscreenVisitableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */; };
-		252A92671EF86FD3007C9CEE /* FullscreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A92661EF86FD3007C9CEE /* FullscreenNavigationController.swift */; };
-		252A92681EF86FD3007C9CEE /* FullscreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252A92661EF86FD3007C9CEE /* FullscreenNavigationController.swift */; };
 		253E579F1EED43E300D22068 /* JsonRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E579E1EED43E300D22068 /* JsonRequestsController.swift */; };
 		253E57A01EED43E300D22068 /* JsonRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E579E1EED43E300D22068 /* JsonRequestsController.swift */; };
 		253E57A21EED623E00D22068 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E57A11EED623E00D22068 /* Gloss.framework */; };
@@ -119,7 +117,6 @@
 		252A925A1EF1E899007C9CEE /* LocationChangeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationChangeController.swift; path = Controllers/LocationChangeController.swift; sourceTree = "<group>"; };
 		252A925D1EF46710007C9CEE /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = Controllers/PhotoViewController.swift; sourceTree = "<group>"; };
 		252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullscreenVisitableViewController.swift; path = Controllers/FullscreenVisitableViewController.swift; sourceTree = "<group>"; };
-		252A92661EF86FD3007C9CEE /* FullscreenNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullscreenNavigationController.swift; path = Controllers/FullscreenNavigationController.swift; sourceTree = "<group>"; };
 		253E579E1EED43E300D22068 /* JsonRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonRequestsController.swift; path = Controllers/JsonRequestsController.swift; sourceTree = "<group>"; };
 		253E57A11EED623E00D22068 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		253E57A41EED624600D22068 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
@@ -209,7 +206,6 @@
 				252A925A1EF1E899007C9CEE /* LocationChangeController.swift */,
 				252A925D1EF46710007C9CEE /* PhotoViewController.swift */,
 				252A92631EF5113A007C9CEE /* FullscreenVisitableViewController.swift */,
-				252A92661EF86FD3007C9CEE /* FullscreenNavigationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -420,7 +416,6 @@
 				25505A2D1D706B0C009DC1BF /* VisitableViewController.swift in Sources */,
 				25505A2E1D706B0C009DC1BF /* ErrorView.swift in Sources */,
 				25505A2F1D706B0C009DC1BF /* UIImage.swift in Sources */,
-				252A92681EF86FD3007C9CEE /* FullscreenNavigationController.swift in Sources */,
 				25505A421D707C8D009DC1BF /* Config.swift in Sources */,
 				253E57A91EED655300D22068 /* MapLocation.swift in Sources */,
 				252A925F1EF46710007C9CEE /* PhotoViewController.swift in Sources */,
@@ -456,7 +451,6 @@
 				2579F1A91D5E72C500EA2299 /* VisitableViewController.swift in Sources */,
 				2579F1B01D5E734900EA2299 /* ErrorView.swift in Sources */,
 				25505A1A1D6BC746009DC1BF /* UIImage.swift in Sources */,
-				252A92671EF86FD3007C9CEE /* FullscreenNavigationController.swift in Sources */,
 				25505A411D707707009DC1BF /* Config.swift in Sources */,
 				253E57A81EED655300D22068 /* MapLocation.swift in Sources */,
 				252A925E1EF46710007C9CEE /* PhotoViewController.swift in Sources */,
